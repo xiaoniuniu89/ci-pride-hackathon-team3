@@ -1,4 +1,4 @@
-<h1 align="center">Code Institute Website</h1>
+<h1 align="center">Code Institute</h1>
 
 [View the live project here.](https://codeinstitute.net)
 
