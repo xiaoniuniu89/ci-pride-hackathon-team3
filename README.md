@@ -12,20 +12,23 @@ This is the main marketing website for Code Institute. It is designed to be resp
 
     -   #### First Time Visitor Goals
 
-        1. As a First Time Visitor, I want to easily understand the main purpose of the site and learn more about the organisation.
-        2. As a First Time Visitor, I want to be able to easily navigate throughout the site to find content.
-        3. As a First Time Visitor, I want to look for testimonials to understand what their users think of them and see if they are trusted. I also want to locate their social media links to see their followings on social media to determine how trusted and known they are.
+        1. As a First Time Visitor, I want to instantly understand the site's purpose.
+        2. As a First Time Visitor, I want to be able to navigate throughout the site seamlessly.
+        3. As a First Time Visitor, I want donating to a given given event/charity to be clear and easy to do.
+        4. As a First Time Visitor, I want to see examples of past / successful events. 
+        5. As a First Time Visitor, I want to be able to understand the positive role the site plays.
 
     -   #### Returning Visitor Goals
 
-        1. As a Returning Visitor, I want to find information about coding challenges.
-        2. As a Returning Visitor, I want to find the best way to get in contact with the organisation with any questions I may have.
-        3. As a Returning Visitor, I want to find community links.
+        1. As a Returning Visitor, I want to connect to like minded people / organisations.
+        2. As a Returning Visitor, I want to organise my own event.
+        3. As a Returning Vistior, I want to be able to sign up / register and have a clear path to do so.
 
     -   #### Frequent User Goals
-        1. As a Frequent User, I want to check to see if there are any newly added challenges or hackathons.
-        2. As a Frequent User, I want to check to see if there are any new blog posts.
-        3. As a Frequent User, I want to sign up to the Newsletter so that I am emailed any major updates and/or changes to the website or organisation.
+        1. As a Frequent User, I want to be able to follow and stay updated on events / causes that I'm interested in.
+        2. As a Frequent User, I want to check to see if there are any new events I haven't seen previously.
+        3. As a Frequent User, I want to be able to have an overview of my own organised events.
+        4. As a Frequent User, I want to be able to not only donate money but my own time, to causes I am passionate about.
 
 -   ### Design
     -   #### Colour Scheme
@@ -55,6 +58,8 @@ This is the main marketing website for Code Institute. It is designed to be resp
 
 -   [HTML5](https://en.wikipedia.org/wiki/HTML5)
 -   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+-   [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+-   [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 
 ### Frameworks, Libraries & Programs Used
 
@@ -72,8 +77,8 @@ This is the main marketing website for Code Institute. It is designed to be resp
     - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
 1. [GitHub:](https://github.com/)
     - GitHub is used to store the projects code after being pushed from Git.
-1. [Photoshop:](https://www.adobe.com/ie/products/photoshop.html)
-    - Photoshop was used to create the logo, resizing images and editing photos for the website.
+1. [Django:](https://www.djangoproject.com/)
+    - The Django framework was used to help with rapid development of the project.
 1. [Balsamiq:](https://balsamiq.com/)
     - Balsamiq was used to create the [wireframes](https://github.com/) during the design process.
 
@@ -213,16 +218,15 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 ### Content
 
--   All content was written by the developer.
+-   All content was written by the developers.
 
 -   Psychological properties of colours text in the README.md was found [here](http://www.colour-affects.co.uk/psychological-properties-of-colours)
 
 ### Media
 
--   All Images were created by the developer.
+-   All Images were sourced from.
 
 ### Acknowledgements
 
 -   My Mentor for continuous helpful feedback.
 
--   Tutor support at Code Institute for their support.
