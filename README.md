@@ -1,149 +1,285 @@
-<h1 align="center">Code Institute</h1>
+<h1 align="center">Bring Us Together</h1>
 
-[View the live project here.](https://codeinstitute.net)
+[View the live project here.]()
 
-This is the main marketing website for Code Institute. It is designed to be responsibe and accessible on a range of devices, making it easy to navigate for potential students and partners.
+Bring Us Together is a open network where users can create support and contribute to fully inclusive events. Not only by donating to causes which are close to home but also providing a platform to volunteer time and effort to bring about the social change users feel strongly about. 
 
-<h2 align="center"><img src="https://i.ibb.co/TYvTXz1/Example-CI.png"></h2>
 
-## User Experience (UX)
+[View deployed site]()
 
--   ### User stories
+# **Table of Contents**   
+1. [UX Development](#ux-development)
+    * [PROJECT GOAL](#project-goal)
+      
+    * [USER STORIES](#user-stories)
+        * [New User](#new-user)
+        * [Registered Users/Returning Users](#registered-user-or-returning-users)
+        * [Frequent User](#frequent-user)
+        * [Target Audience](#target-audience)
 
-    -   #### First Time Visitor Goals
+   * [DESIGN](#design)
+        * [Colour Scheme](#colour-scheme)
+        * [Typography](#typography)
+        * [Imagery](#imagery)
+        * [Wireframes](#wireframes)
+        * [Database Structure](#database-structure)
 
-        1. As a First Time Visitor, I want to instantly understand the site's purpose.
-        2. As a First Time Visitor, I want to be able to navigate throughout the site seamlessly.
-        3. As a First Time Visitor, I want donating to a given given event/charity to be clear and easy to do.
-        4. As a First Time Visitor, I want to see examples of past / successful events. 
-        5. As a First Time Visitor, I want to be able to understand the positive role the site plays.
+      
+2. [Features](#features)  
+    * [EXISTING FEATURES](#existing-features) 
+        * [General Features On All Pages](#general-features-on-all-pages)
+        * [Features To Implement In Future](#features-to-implement-in-future)
+      
+3. [Technology Used](#technology-used)  
+    * [Language Used](#language-used) 
+    * [Frameworks & libraries](#frameworks-libraries)
+    * [Packages/Dependencies Installed](#packages-dependencies-installed)
+    * [Database Management](#database-management)
+    * [Payment Service](#payment-service)
+    * [Storage & Hosting](#storage-hosting)
 
-    -   #### Returning Visitor Goals
 
-        1. As a Returning Visitor, I want to connect to like minded people / organisations.
-        2. As a Returning Visitor, I want to organise my own event.
-        3. As a Returning Vistior, I want to be able to sign up / register and have a clear path to do so.
+4. [Testing](#testing)   
+    * [TEST.md](#testing)   
 
-    -   #### Frequent User Goals
-        1. As a Frequent User, I want to be able to follow and stay updated on events / causes that I'm interested in.
-        2. As a Frequent User, I want to check to see if there are any new events I haven't seen previously.
-        3. As a Frequent User, I want to be able to have an overview of my own organised events.
-        4. As a Frequent User, I want to be able to not only donate money but my own time, to causes I am passionate about.
+5. [DEPLOYMENT](#deployment)
+    * [How to Use Project](#how-to-use-project)
+    * [Project Set Up](#project-set-up)
+    * [Deployment To Heroku](#deployment-to-heroku)
+    * [AWS And S3 Bucket Setup](#aws-and-s3-bucket-setup)
+    * [Connect Django To AWS Bucket](#connect-django-to-aws-bucket)
+
+7. [Credits](#credits)  
+    * [Content](#content) 
+    * [Media](#media)  
+ 
+8. [Acknowledgements](#acknowledgements)
+    * [Team Members](#team-members)
+
 
 -   ### Design
     -   #### Colour Scheme
-        -   The two main colours used are Code Insititue red, and white.
+        The colour scheme of the site is a mix of rainbow colours which signify diversity while encouraging togetherness. A strong symbol of the LGBTQ+ community;
+                
+        - #A64E77 
+        - #033EBC
+        - #F2E205
+        - #BF5B04
+        - #D91604
+
     -   #### Typography
         -   The Montserrat font is the main font used throughout the whole website with Sans Serif as the fallback font in case for any reason the font isn't being imported into the site correctly. Montserrat is a clean font used frequently in programming, so it is both attractive and appropriate.
     -   #### Imagery
         -   Imagery is important. The large, background hero image is designed to be striking and catch the user's attention. It also has a modern, energetic aesthetic.
 
-*   ### Wireframes
 
-    -   Home Page Wireframe - [View](https://github.com/)
+## **UX Development**
+### **PROJECT GOAL**
 
-    -   Mobile Wireframe - [View](https://github.com/)
+GOAL OF PROJECT 
+## **User Stories***
+### **New User**
+* As a First Time Visitor, I want to instantly understand the site's purpose.
+* As a First Time Visitor, I want to be able to navigate throughout the site seamlessly.
+* As a First Time Visitor, I want donating to a given given event/charity to be clear and easy to do.
+* As a First Time Visitor, I want to see examples of past / successful events. 
+* As a First Time Visitor, I want to be able to understand the positive role the site plays
 
-    -   Contact Us Page Wireframe - [View](https://github.com/)
+### **Registered User/Returning Users**
 
-## Features
+* As a Returning Visitor, I want to connect to like minded people / organisations.
+* As a Returning Visitor, I want to organise my own event.
+* As a Returning Vistior, I want to be able to sign up / register and have a clear path to do so.
+### **Frequent User**
 
--   Responsive on all device sizes
+* As a Frequent User, I want to be able to follow and stay updated on events / causes that I'm interested in.
+* As a Frequent User, I want to check to see if there are any new events I haven't seen previously.
+* As a Frequent User, I want to be able to have an overview of my own organised events.
+* As a Frequent User, I want to be able to not only donate money but my own time, to causes I am passionate about.
 
--   Interactive elements
+### **Target Audience**
 
-## Technologies Used
+Audience 
+## **Design**
 
-### Languages Used
+### **Colour Scheme**
+
+Colors have a significant effect on our mood, through them,
+
+![The color scheme](  "The color Pallete") 
+
+### **Typography**
+
+
+![Quicksand Font](documentation/font_quicksand.png)
+
+### **Wireframes**
+
+The entire site's wireframe was done using [Figma](https://www.figma.com) & Balmasiq.This depicts the site on a desktop and a mobile device.
+
+![Wireframe for HomePage]()
+![Wireframe for Event page ]()
+![Wireframe for Donation page ]()
+![Wireframe for Single Event page ]()
+![Wireframe for Login page ]()
+![Wireframe for Log Out page ]()
+![Wireframe for Profile page ]()
+![Wireframe for Sign Up page ]()
+
+### **Database Structure**
+
+[Diagram.io](https://dbdiagram.io/home) was used to create the data schema for this project. Our schema had three collections:
+
+
+![Database structure](documentation/database-schema.png)  
+
+## **Features**
+
+### **General Features On All Pages**
+
+The site has been designed to be fully responsive, from mobile all the way up to desktop.
+
+**Navbar**
+
+The site has a fully responsive navbar.
+
+![Navbar desktop](documentation/navbar-desktop.png)
+![Navbar Small Screens](documentation/navbar-small.png)
+
+**Footer**
+
+The site has a fully responsive footer. The footer contains links to social media, the privacy policy and terms and conditions pages. It also features a call to action button asking users to join now.
+
+![Footer Large](documentation/footer-large.png)
+![Footer Small](documentation/footer-small.png)
+
+**Favicon**
+
+The Favicon was created using [Favicon.io](https://favicon.io/).
+We have chosen this image as our site logo and have also used it as our favicon as it brings brand cohesion to the site.
+
+![Favicon](documentation/rm-favicon.png)
+
+**Site Logo**
+uguhom;,
+
+### **FEATURES TO IMPLEMENT IN FUTURE**  
+
+
+<br/>   
+  
+# **Technology Used**
+### **LANGUAGE USED** 
 
 -   [HTML5](https://en.wikipedia.org/wiki/HTML5)
 -   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
 -   [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 -   [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 
-### Frameworks, Libraries & Programs Used
+### **FRAMEWORKS & LIBRARIES**   
+   * [Django Template](https://jinja.palletsprojects.com) : Django used this as a templating language to display backend data on the frontend.
 
-1. [Bootstrap 4.4.1:](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
-    - Bootstrap was used to assist with the responsiveness and styling of the website.
-1. [Hover.css:](https://ianlunn.github.io/Hover/)
-    - Hover.css was used on the Social Media icons in the footer to add the float transition while being hovered over.
-1. [Google Fonts:](https://fonts.google.com/)
-    - Google fonts were used to import the 'Titillium Web' font into the style.css file which is used on all pages throughout the project.
-1. [Font Awesome:](https://fontawesome.com/)
-    - Font Awesome was used on all pages throughout the website to add icons for aesthetic and UX purposes.
-1. [jQuery:](https://jquery.com/)
-    - jQuery came with Bootstrap to make the navbar responsive but was also used for the smooth scroll function in JavaScript.
-1. [Git](https://git-scm.com/)
-    - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
-1. [GitHub:](https://github.com/)
-    - GitHub is used to store the projects code after being pushed from Git.
-1. [Django:](https://www.djangoproject.com/)
-    - The Django framework was used to help with rapid development of the project.
-1. [Balsamiq:](https://balsamiq.com/)
-    - Balsamiq was used to create the [wireframes](https://github.com/) during the design process.
+   * [BOOTSTRAP 5.0](https://getbootstrap.com/docs/5.0/):  This was used to help with the website's structure, style, and responsiveness across all devices.
 
-## Testing
+   * [jQuery 3.6.0](https://jquery.com/) : This is a JavaScript library that makes it possible to write less JavaScript code.
 
-The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
+   * [Fontawesome](https://fontawesome.com/) : This was used to convey information using icons and to improve the site's appearance.
 
--   [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results](https://github.com/)
--   [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results](https://github.com/)
+   * [Google Fonts](https://fonts.google.com/) : For this project's design, the fonts Belleza and Source Sans Pro have been imported into the stylesheet.
 
-### Testing User Stories from User Experience (UX) Section
+   * [GITHUB](https://github.com/) : This was the location of the project's code.
 
--   #### First Time Visitor Goals
+### **PACKAGES/ DEPENDENCIES INSTALLED** 
 
-    1. As a First Time Visitor, I want to easily understand the main purpose of the site and learn more about the organisation.
+   * [Django Allauth](https://django-allauth.readthedocs.io/en/latest/) : This was used to verify users' identities, register them, and manage their accounts.  
+
+   * [Django Crispy Form](https://django-crispy-forms.readthedocs.io/en/latest/) : This was used to manage forms on the website, allowing us to modify their properties.
+
+    1. As a First Time Visitor, I want to instantly understand the site's purpose.
 
         1. Upon entering the site, users are automatically greeted with a clean and easily readable navigation bar to go to the page of their choice. Underneath there is a Hero Image with Text and a "Learn More" Call to action button.
-        2. The main points are made immediately with the hero image
-        3. The user has two options, click the call to action buttons or scroll down, both of which will lead to the same place, to learn more about the organisation.
 
-    2. As a First Time Visitor, I want to be able to easily be able to navigate throughout the site to find content.
+    2. As a First Time Visitor, I want to be able to navigate throughout the site seamlessly.
 
         1. The site has been designed to be fluid and never to entrap the user. At the top of each page there is a clean navigation bar, each link describes what the page they will end up at clearly.
-        2. At the bottom of the first 3 pages there is a redirection call to action to ensure the user always has somewhere to go and doesn't feel trapped as they get to the bottom of the page.
-        3. On the Contact Us Page, after a form response is submitted, the page refreshes and the user is brought to the top of the page where the navigation bar is.
 
-    3. As a First Time Visitor, I want to look for testimonials to understand what their users think of them and see if they are trusted. I also want to locate their social media links to see their following on social media to determine how trusted and known they are.
+    3. As a First Time Visitor, I want donating to a given given event/charity to be clear and easy to do.
         1. Once the new visitor has read the About Us and What We Do text, they will notice the Why We are Loved So Much section.
-        2. The user can also scroll to the bottom of any page on the site to locate social media links in the footer.
-        3. At the bottom of the Contact Us page, the user is told underneath the form, that alternatively they can contact the organisation on social media which highlights the links to them.
+
+    4. As a First Time Visitor, I want to see examples of past / successful events.
+        1. 
+    
+    5. As a First Time Visitor, I want to be able to understand the positive role the site plays.
+        1.     
 
 -   #### Returning Visitor Goals
 
-    1. As a Returning Visitor, I want to find the new programming challenges or hackathons.
+    1. As a Returning Visitor, I want to connect to like minded people / organisations.
 
-        1. These are clearly shown in the banner message.
-        2. They will be directed to a page with another hero image and call to action.
 
-    2. As a Returning Visitor, I want to find the best way to get in contact with the organisation with any questions I may have.
+    2. As a Returning Visitor, I want to organise my own event.
+        
 
-        1. The navigation bar clearly highlights the "Contact Us" Page.
-        2. Here they can fill out the form on the page or are told that alternatively they can message the organisation on social media.
-        3. The footer contains links to the organisations Facebook, Twitter and Instagram page as well as the organization's email.
-        4. Whichever link they click, it will be open up in a new tab to ensure the user can easily get back to the website.
-        5. The email button is set up to automatically open up your email app and autofill there email address in the "To" section.
-
-    3. As a Returning Visitor, I want to find the Facebook Group link so that I can join and interact with others in the community.
-        1. The Facebook Page can be found at the footer of every page and will open a new tab for the user and more information can be found on the Facebook page.
-        2. Alternatively, the user can scroll to the bottom of the Home page to find the Facebook Group redirect card and can easily join by clicking the "Join Now!" button which like any external link, will open in a new tab to ensure they can get back to the website easily.
-        3. If the user is on the "Our Favourites" page they will also be greeted with a call to action button to invite the user to the Facebook group. The user is incentivized as they are told there is a weekly favourite product posted in the group.
+    3. As a Returning Vistior, I want to be able to sign up / register and have a clear path to do so.
+        
 
 -   #### Frequent User Goals
+    1. As a Frequent User, I want to be able to follow and stay updated on events / causes that I'm interested in.
+    
+    2. As a Frequent User, I want to check to see if there are any new events I haven't seen previously.
+    
+    3. As a Frequent User, I want to be able to have an overview of my own organised events.
+    
+    4. As a Frequent User, I want to be able to not only donate money but my own time, to causes I am passionate about.
 
-    1. As a Frequent User, I want to check to see if there are any newly added challenges or hackathons.
 
-        1. The user would already be comfortable with the website layout and can easily click the banner message.
+   * [Gunicorn](https://gunicorn.org/) : This is an HTTP server for WSGI applications that will be used to aid in the deployment of the project.
 
-    2. As a Frequent User, I want to check to see if there are any new blog posts.
+   * [Pillow](https://pypi.org/project/Pillow/) : This is a Python imaging library for processing and manipulating images.
 
-        1. The user would already be comfortable with the website layout and can easily click the blog link
+### **DATABASE MANAGEMENT**
 
-    3. As a Frequent User, I want to sign up to the Newsletter so that I am emailed any major updates and/or changes to the website or organisation.
-        1. At the bottom of every page their is a footer which content is consistent throughout all pages.
-        2. To the right hand side of the footer the user can see "Subscribe to our Newsletter" and are prompted to Enter their email address.
-        3. There is a "Submit" button to the right hand side of the input field which is located close to the field and can easily be distinguished.
+   * [SQLite](https://www.sqlite.com/index.html) : This served as our database for development.  
+
+   * [Heroku Postgres](https://www.heroku.com/postgres) :  This was used for our Heroku database in production.  
+
+### **PAYMENT SERVICE** 
+   * [Stripe]https://dashboard.stripe.com/): This was used to process payments on the website. 
+
+### **STORAGE & HOSTING**  
+   * [Amazon Web Service S3](https://aws.amazon.com/s3/) :This was used in production to host all of our static and media files.
+
+   * [Heroku](https://en.wikipedia.org/wiki/Heroku) : This was our preferred cloud platform for deploying our project.
+
+   * [GITHUB](https://github.com/) : This was our preferred cloud platform for deploying our project.
+
+### **OTHER TOOLS**  
+
+   * [FIGMA](https://www.figma.com/) : This was used to create wireframes (mobile, ipad and desktop devices).
+
+   * [Balsamiq:](https://balsamiq.com/) : Balsamiq was used to create the [wireframes](https://github.com/) during the design process.
+
+   * [GIT](https://git-scm.com/) : This was the preferred method of version control. To commit and publish our project to GitHub, we used the gitpod.
+
+   * [Favicon.io](https://favicon.io/favicon-converter/) : This is a Favicon maker that was used to create the MMÀ-HAIRCARE favicon. 
+
+   * [JSHint](https://jshint.com/) : This was used to analyse the JavaScript code and ensure that all errors were minimised. 
+
+   * [PEP8](http://pep8online.com/) : This was used to run our Python code to ensure it was free of errors.
+
+   * [CHROME DEV TOOLS]() : This was used to test the responsiveness of our website across different screen sizes.
+
+   * [dbdiagram.io](dbdiagram.io) : This was used to create our database schema. 
+
+   * [Adobe Color](https://color.adobe.com/): This was used to select the site's colour scheme.
+
+   * [TinyPNG](https://tinyjpg.com/): This is an image compressor that is used to compress all images.
+
+
+## Testing
+
+Please view our [TESTING.md](#testing) file for more information on the testing undertaken.
+
 
 ### Further Testing
 
@@ -158,29 +294,27 @@ The W3C Markup Validator and W3C CSS Validator Services were used to validate ev
     -   A white gap can be seen to the right of the footer and navigation bar as a result.
 -   On Microsoft Edge and Internet Explorer Browsers, all links in Navbar are pushed upwards when hovering over them.
 
-## Deployment
 
-### GitHub Pages
+### Testing User Stories from User Experience (UX) Section
 
-The project was deployed to GitHub Pages using the following steps...
 
-1. Log in to GitHub and locate the [GitHub Repository](https://github.com/)
-2. At the top of the Repository (not top of page), locate the "Settings" Button on the menu.
-    - Alternatively Click [Here](https://raw.githubusercontent.com/) for a GIF demonstrating the process starting from Step 2.
-3. Scroll down the Settings page until you locate the "GitHub Pages" Section.
-4. Under "Source", click the dropdown called "None" and select "Master Branch".
-5. The page will automatically refresh.
-6. Scroll back down through the page to locate the now published site [link](https://github.com) in the "GitHub Pages" section.
+## **Deployment**
 
-### Forking the GitHub Repository
+### **Deployment Heroku**
 
-By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
+This project was deployed using Heroku:
 
-1. Log in to GitHub and locate the [GitHub Repository](https://github.com/)
-2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
-3. You should now have a copy of the original repository in your GitHub account.
+1. Create a new app with the name found-in-translation.
+2. Linked the found-in-translation app to its Github repository.
+3. Verify that the project has an up to date Procfile and requirements.txt
+4. Push the project to the Heroku remote.
+5. Set the SECRET_KEY environmental variable in the Heroku config vars.
+6. Set the IP to 0.0.0.0 and the PORT to 5000 in the Heroku config vars.
+7. Set the MONGO_URI environmental variable in the Heroku config vars.
+8. Restart all dynos.
+9. Open the app on Heroku and check to ensure that it's working correctly.
 
-### Making a Local Clone
+### **How to clone**
 
 1. Log in to GitHub and locate the [GitHub Repository](https://github.com/)
 2. Under the repository name, click "Clone or download".
@@ -206,9 +340,21 @@ $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 
 Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop) to retrieve pictures for some of the buttons and more detailed explanations of the above process.
 
-## Credits
+### **How to Fork**
 
-### Code
+By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/)
+2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
+3. You should now have a copy of the original repository in your GitHub account.
+
+
+## **Credits**
+### **Content**
+
+-   All content was written by the developers.
+
+-   Psychological properties of colours text in the README.md was found [here](http://www.colour-affects.co.uk/psychological-properties-of-colours)
 
 -   The full-screen hero image code came from this [StackOverflow post](https://stackoverflow.com)
 
@@ -216,17 +362,31 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 -   [MDN Web Docs](https://developer.mozilla.org/) : For Pattern Validation code. Code was modified to better fit my needs and to match an Irish phone number layout to ensure correct validation. Tutorial Found [Here](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/tel#Pattern_validation)
 
-### Content
+### **Media**
+All images were obtained from 
+## **Acknowledgements**
 
--   All content was written by the developers.
+* Thank you to Code Institute for putting together this hackathon - we have had an amazing time taking part.
+* A huge thank you to our families for once again putting up with us disappearing for another weeekend filled with hackathon fun.
 
--   Psychological properties of colours text in the README.md was found [here](http://www.colour-affects.co.uk/psychological-properties-of-colours)
+## **Team Members**
 
-### Media
+* Name  [LinkedIn]() | [Github]()
 
--   All Images were sourced from.
+""
 
-### Acknowledgements
+* . []() | [Github](\)
 
--   My Mentor for continuous helpful feedback.
+"_"
 
+* Didi [LinkedIn](https://www.linkedin.com/in/onyema-onyejekwe-492128102/) | [Github](https://github.com/Didisimmons)
+
+"_Participating in the June 2022 Hackathon organized by Code Institute was an incredible experience. Thank you for this wonderful opportunity; the last few days have been simply incredible; I got to work with and learn from talented individuals, build my network skills, improve my collaborative skills, and have fun with my new friends while working on our exciting project. I'm looking forward to participating in many more hackathons in the future._"
+
+* [LinkedIn]() | [Github]()
+
+""
+
+*  [LinkedIn]() | [Github]()
+
+"". 
