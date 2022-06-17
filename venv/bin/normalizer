@@ -1,4 +1,4 @@
-#!/home/daniel/hackathon/ci-pride-hackathon-team3/venv/bin/python3
+#!/home/daniel/ci-pride-hackathon-team3/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
