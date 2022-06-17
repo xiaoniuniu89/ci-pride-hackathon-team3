@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'crispy_forms',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -58,7 +59,7 @@ ROOT_URLCONF = 'CONFIG.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATES_DIR],
+        'DIRS': [TEMPLATES_DIR, os.path.join(BASE_DIR, 'templates/allauth/')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -162,3 +163,5 @@ AUTHENTICATION_BACKENDS = [
 SOCIALACCOUNT_PROVIDERS = {
   
 }
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

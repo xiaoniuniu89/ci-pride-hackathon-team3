@@ -4,6 +4,8 @@
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
+<div class="container col-12 col-md-6 py-5 all-auth-container">
+
 {% if process == "connect" %}
 <h1>{% blocktrans with provider.name as provider %}Connect {{ provider }}{% endblocktrans %}</h1>
 
@@ -18,4 +20,5 @@
   {% csrf_token %}
   <button type="submit">{% trans "Continue" %}</button>
 </form>
+</div>
 {% endblock %}
