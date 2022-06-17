@@ -30,8 +30,11 @@ body{
     text-align: center;
 }
 
+.navbar{
+    height:5rem;
+}
+
 .navbar-brand{
-    
     font-weight:500;
     font-size:1.7rem;
     color:white;
@@ -48,15 +51,20 @@ body{
 
 .nav-item {
     padding:4px 3px 5px 3px;
+    color: white;
 }
 
 .nav-item a:hover{
     cursor:pointer;
-    box-shadow:0 0.1rem 1.2rem 0 rgba(230, 58, 15, 0.6);
+    box-shadow:0 0.1rem 1.2rem 0 rgba(226, 230, 15, 0.152);
     color: var(--yellow);
     border-radius:3px;
-    background-color: white;  
+    background-color: white; 
 }
 .navbar .navbar-toggler {
     border: 0;
+}
+
+#navbarSupportedContent{
+    background-color: var(--purple);;
 }
