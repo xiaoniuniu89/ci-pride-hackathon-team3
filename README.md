@@ -1,8 +1,9 @@
-# **WEBSITE NAME **
+<h1 align="center">Bring Us Together</h1>
 
-![overview  on all devices]()
+[View the live project here.]()
 
-Brief intro about the wesbite ........
+Bring Us Together is a open network where users can create support and contribute to fully inclusive events. Not only by donating to causes which are close to home but also providing a platform to volunteer time and effort to bring about the social change users feel strongly about. 
+
 
 [View deployed site]()
 
@@ -55,7 +56,22 @@ Brief intro about the wesbite ........
 8. [Acknowledgements](#acknowledgements)
     * [Team Members](#team-members)
 
-<br/> 
+
+-   ### Design
+    -   #### Colour Scheme
+        The colour scheme of the site is a mix of rainbow colours which signify diversity while encouraging togetherness. A strong symbol of the LGBTQ+ community;
+                
+        - #A64E77 
+        - #033EBC
+        - #F2E205
+        - #BF5B04
+        - #D91604
+
+    -   #### Typography
+        -   The Montserrat font is the main font used throughout the whole website with Sans Serif as the fallback font in case for any reason the font isn't being imported into the site correctly. Montserrat is a clean font used frequently in programming, so it is both attractive and appropriate.
+    -   #### Imagery
+        -   Imagery is important. The large, background hero image is designed to be striking and catch the user's attention. It also has a modern, energetic aesthetic.
+
 
 ## **UX Development**
 ### **PROJECT GOAL**
@@ -179,6 +195,44 @@ uguhom;,
 
    * [Django Crispy Form](https://django-crispy-forms.readthedocs.io/en/latest/) : This was used to manage forms on the website, allowing us to modify their properties.
 
+    1. As a First Time Visitor, I want to instantly understand the site's purpose.
+
+        1. Upon entering the site, users are automatically greeted with a clean and easily readable navigation bar to go to the page of their choice. Underneath there is a Hero Image with Text and a "Learn More" Call to action button.
+
+    2. As a First Time Visitor, I want to be able to navigate throughout the site seamlessly.
+
+        1. The site has been designed to be fluid and never to entrap the user. At the top of each page there is a clean navigation bar, each link describes what the page they will end up at clearly.
+
+    3. As a First Time Visitor, I want donating to a given given event/charity to be clear and easy to do.
+        1. Once the new visitor has read the About Us and What We Do text, they will notice the Why We are Loved So Much section.
+
+    4. As a First Time Visitor, I want to see examples of past / successful events.
+        1. 
+    
+    5. As a First Time Visitor, I want to be able to understand the positive role the site plays.
+        1.     
+
+-   #### Returning Visitor Goals
+
+    1. As a Returning Visitor, I want to connect to like minded people / organisations.
+
+
+    2. As a Returning Visitor, I want to organise my own event.
+        
+
+    3. As a Returning Vistior, I want to be able to sign up / register and have a clear path to do so.
+        
+
+-   #### Frequent User Goals
+    1. As a Frequent User, I want to be able to follow and stay updated on events / causes that I'm interested in.
+    
+    2. As a Frequent User, I want to check to see if there are any new events I haven't seen previously.
+    
+    3. As a Frequent User, I want to be able to have an overview of my own organised events.
+    
+    4. As a Frequent User, I want to be able to not only donate money but my own time, to causes I am passionate about.
+
+
    * [Gunicorn](https://gunicorn.org/) : This is an HTTP server for WSGI applications that will be used to aid in the deployment of the project.
 
    * [Pillow](https://pypi.org/project/Pillow/) : This is a Python imaging library for processing and manipulating images.
@@ -225,6 +279,7 @@ uguhom;,
 ## Testing
 
 Please view our [TESTING.md](#testing) file for more information on the testing undertaken.
+
 
 ### Further Testing
 
