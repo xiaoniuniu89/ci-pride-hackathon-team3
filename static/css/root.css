@@ -10,3 +10,61 @@
     --red: #D91604;
     --red-light: #f77b70;
 }
+
+
+/*----- Footer -----*/
+
+.footer-container {
+    background-color: var(--purple);
+    padding: 2rem 0 0 0;
+    color: var(--black);
+    width: 100%;
+    padding-bottom: 2rem;
+}
+
+.logo-header{
+    color: var(--yellow);
+}
+
+.social-links {
+margin-top: 15px;
+padding: 0;
+}
+
+.social-links li a i {
+width: 30px;
+height: 30px;
+font-size: 13px;
+text-align: center;
+color: white;
+}
+
+.fa-facebook-f:hover {
+color: var(--blue);
+}
+
+.fa-instagram:hover {
+color: var(--orange);
+}
+
+.fa-twitter:hover {
+color: var(--lightblue);
+}
+
+.fa-youtube:hover {
+color: var(--red);
+}
+
+.service {
+line-height: 1.3rem;
+}
+
+.general {
+color: white;
+text-decoration: none;
+}
+
+.general:hover {
+color: black;
+}
+
