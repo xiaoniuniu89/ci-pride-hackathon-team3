@@ -9,6 +9,7 @@
     --orange-light: #eea25f;
     --red: #D91604;
     --red-light: #f77b70;
+    --brown : #61150E;
 }
 
 body{
@@ -125,3 +126,110 @@ text-decoration: none;
 .general:hover {
 color: black;
 }
+
+
+/* donation page */
+
+.hero-image-text{
+    letter-spacing: 10px;
+    line-height:4rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 3rem 0 1rem 0;
+    font-family: Roboto,sans-serif;
+    color:white;
+    font-size: 2.2rem;
+
+    animation-name: stretch;
+    animation-duration: 1.5s; 
+    animation-timing-function: ease-out; 
+    animation-delay: 0s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-fill-mode: none;
+    animation-play-state: running;
+
+}
+/* animation effect from previous project LILELI */
+
+@keyframes stretch{
+    from{
+      transform: scale(0.6);
+    }
+    to{
+      transform: scale(1);
+    }
+  }
+
+.header-container {
+    width:100%;
+    background: url('/media/heroimage.jpeg') no-repeat center center fixed;  
+    object-fit: cover;
+    padding-top: 4rem;
+    height: 45vh;
+}
+
+.support-container{
+    color: var(--brown);
+    padding: 3rem 0;
+}
+
+.support-header{
+    font-size:2rem;
+    padding:2rem 0;
+}
+
+.support-text {
+    text-align: center;
+    line-height: 2rem;
+}
+
+.ways-header{
+    color: var(--brown);
+    font-size:1.6rem;
+    padding-bottom:1rem;
+}
+
+.ways-list{
+    padding:1.5rem 0;
+}
+
+.donate-button .btn{
+    color:white;
+    border:#ffff;
+    background-color:var(--blue)
+}
+
+.btn-white{
+    background-color: transparent;
+    color:black;
+}
+
+.donate-button a:hover{
+        cursor:pointer;
+        box-shadow:0 0.1rem 1.2rem 0 rgba(226, 230, 15, 0.152);
+        color: white;
+        background-color:var(--blue)
+}
+
+.donate-btn{
+    line-height: normal;
+    border: 1px solid ;
+    text-align: center;
+}
+
+.charity-list{
+    padding-top: 2rem;
+    color: var(--brown);
+}
+
+.list-of-charities{
+    padding-top:1rem;
+    text-transform: uppercase;
+}
+
+.org{
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
+
