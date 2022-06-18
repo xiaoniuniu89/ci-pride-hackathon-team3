@@ -5,7 +5,7 @@
     https://stripe.com/docs/stripe-js
 */
 //create stripe element
-var stripePublicKey = ('pk_test_k00xao0P5r64RAYcBGuR9enF002XDNTq52');
+var stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
 var stripe = Stripe(stripePublicKey);
 
 //create an instance of the element
