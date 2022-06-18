@@ -6,7 +6,7 @@ from django.views.generic import (
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 
-from .forms import EventForm
+from .forms import EventForm, CommentForm
 from .models import Event, Donation, Comment
 
 class EventListView(ListView):
@@ -55,7 +55,6 @@ class EventUpdateView(SuccessMessageMixin, UpdateView):
 
     def get_success_url(self, **kwargs):
         slug = self.kwargs['slug']
-        
         return reverse('event_detail', kwargs={'slug': slug})
 
 def eventDelete(request, pk):
@@ -65,4 +64,11 @@ def eventDelete(request, pk):
         event.delete()
         messages.success(request, 'deleted')
         return redirect('event_list')
+
+
+def createComment(request, pk):
+    if request.method == 'POST':
+        event = Event.objects.get(pk=pk)
+        Comment.objects.create(event=event, user=request.user, body=request.POST.get('comment_body').lstrip().rstrip())
+        return redirect('event_detail', event.slug )
 
