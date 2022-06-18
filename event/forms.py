@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Event
+from .models import Event, Comment
 
 
 class DatePicker(forms.DateInput):
@@ -32,3 +32,12 @@ class EventForm(forms.ModelForm):
             'date': DatePicker(),
             'time': TimePicker(),
         }
+
+class CommentForm(forms.ModelForm):
+    """comment form """
+    model = Comment
+    fields = ['body']
+
+    widgets = {
+        'body': forms.TextInput(attrs={'class': 'form-control'})
+    }

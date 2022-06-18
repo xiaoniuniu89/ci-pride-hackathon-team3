@@ -44,6 +44,11 @@ class Comment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
     body = models.TextField()
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ('updated', )
 
 # class Volunteer(models.Model):
 #     event = models.ForeignKey(Event, on_delete=models.CASCADE)
