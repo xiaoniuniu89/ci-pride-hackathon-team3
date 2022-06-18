@@ -3,4 +3,5 @@ from . import views
 
 urlpatterns = [
     path('', views.donate, name='donate'),
+    path('make-donation/', views.makedonations, name="make-donation"),
 ]
