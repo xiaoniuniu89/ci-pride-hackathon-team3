@@ -6,15 +6,13 @@ import uuid
 # comments
 
 
-
 class Event(models.Model):
     """Model for events"""
 
     name = models.CharField(max_length=50)
-    featured_image = models.ImageField(default='default.jpg', upload_to='event_featured_images')
+    featured_image = models.ImageField(default='default.jpg', upload_to='media')
     description = models.TextField()
-    slug = models.SlugField(max_length=255) # make unique
-    slug_end = models.UUIDField(default=uuid.uuid4)
+    slug = models.SlugField(default=uuid.uuid4) # make unique
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     location = models.CharField(max_length=50) # look in to cities
@@ -32,12 +30,6 @@ class Event(models.Model):
         donation = Donation.objects.get(event_id=self.id)
         return donation.total
 
-    def save(self, *args, **kwargs):
-        # image_resize(self.featured_image, 512, 512)
-        self.slug += f'-{self.slug_end}'
-        super().save(*args, **kwargs)
-
-    
 
 class Donation(models.Model):
     """model for donation"""
@@ -46,6 +38,12 @@ class Donation(models.Model):
 
     def __str__(self):
         return f'Donation for {self.event.name}'
+
+
+class Comment(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    body = models.TextField()
 
 # class Volunteer(models.Model):
 #     event = models.ForeignKey(Event, on_delete=models.CASCADE)
