@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_css %}
+    <link rel='stylesheet' href="{% static 'charity/css/charity.css' %}" />
+{% endblock extra_css %}
+
+
+{% block content %}
+<section>
+    <div class="container">
+        <div class="row ">
+            <div class="col-12 col-md-6 donations-container">
+                <div class="col-sm-12 text-center">
+                    <h3 class="ways-header">WAYS YOU CAN DONATE</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-md-6 donations-container text-black">
+                <form method="POST" action="{% url 'make-donation' %}" class="form mb-2 text-black" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form }}
+                    <div class="text-center pt-4 pb-4">
+                        <a class="btn btn-outline-black text-uppercase" href="{% url 'home' %}">Cancel</a>
+                        <button class="btn donate-btn text-uppercase" type="submit">MAKE DONATION</button>
+                    </div>
+                </form>
+            </div>            
+        </div>
+    </div>
+</section>
+    
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}
+    <script src="{% static 'charity/js/stripe.js' %}"></script> 
+{% endblock %}

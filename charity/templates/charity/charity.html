@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block extra_css %}
-<link rel='stylesheet' href="{% static 'charity/css/charity.css' %}" />
+    <link rel='stylesheet' href="{% static 'charity/css/charity.css' %}" />
 {% endblock extra_css %}
 {% block page_header %}
     <div class="header-container container-fluid">
@@ -37,7 +37,7 @@
                     <li class="ways-list">Transfer :We also take bank transfers from corporate and private individuals . Kindly Click here to make a transfer. </li>
 
                     <h4 class="donate-button">
-                        <a href="" class="donate-btn btn text-uppercase py-3">
+                        <a href="{% url 'make-donation' %}" class="donate-btn btn text-uppercase py-3">
                             DONATE
                         </a>
                     </h4>
