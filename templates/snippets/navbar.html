@@ -1,7 +1,7 @@
 
 <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"> US TOGETHER </a>
+      <a class="navbar-brand" href="{% url 'home' %}"> US TOGETHER </a>
       <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -11,7 +11,7 @@
             <a class="nav-link active" aria-current="page" href="#">EVENTS </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">DONATE </a>
+            <a class="nav-link active" aria-current="page" href="{% url 'donate' %}">DONATE </a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">SIGN UP</a>
@@ -22,7 +22,7 @@
             </a>
             <ul class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
               {% if request.user.is_authenticated %}
-                <li><a class="dropdown-item" href="#">PROFILE</a></li>
+                <li><a class="dropdown-item" href="{% url 'home' %}">PROFILE</a></li>
                   {% if request.user.is_superuser %}
                     <li><a class="dropdown-item" href="#">MANAGE EVENTS</a></li>
                   {% endif %}
