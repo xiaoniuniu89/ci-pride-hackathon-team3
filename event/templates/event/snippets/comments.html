@@ -15,7 +15,7 @@
                 {% if comment.user == request.user %}
                  <div class="edit-delete">
                     <a href=""><i data-bs-toggle="modal" ata-bs-target="#comment-modal" id="update-comment-btn" class="fas px-2 fa-edit"></i></a>
-                    <a href="{% url 'comment_delete' comment.pk %}"><i data-bs-target="#delete-comment-modal" id="delete-comment-btn" class="fas fa-trash-alt"></i></a>
+                    <i data-bs-toggle="modal" data-p='{{comment.pk}}' data-bs-target="#delete-comment-modal" id="delete-comment-btn" class="fas fa-trash-alt"></i>
                 </div>
                 {% endif %}  
         </div>
@@ -29,5 +29,6 @@
     {% endfor %}
 
 {% include 'event/snippets/create_comment_modal.html' %}
+{% include 'event/snippets/delete_comment_modal.html' %}
     
 </div>

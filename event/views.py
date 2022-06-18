@@ -72,12 +72,11 @@ def createComment(request, pk):
         Comment.objects.create(event=event, user=request.user, body=request.POST.get('comment_body').lstrip().rstrip())
         return redirect('event_detail', event.slug )
 
-def deleteComment(request, pk):
-    if request.method == 'POST':
-        comment = Comment.objects.get(pk=pk)
-        event = Event.objects.get(pk=comment.event.pk)
+def deleteComment(request):
+    if request.POST.get('action') == 'delete':
+        comment_pk = request.POST.get('comment_pk')
+        event_pk = request.POST.get('event_pk')
+        event = Event.objects.get(pk=event_pk)
+        comment = Comment.objects.get(pk=comment_pk)
         comment.delete()
-        messages.success(request, 'deleted')
         return redirect('event_detail', event.slug )
-    
-    return render(request, 'event/comment_delete.html')
