@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.http import JsonResponse
 from django.views.generic import (
     ListView,
     UpdateView
@@ -79,4 +80,15 @@ def deleteComment(request):
         event = Event.objects.get(pk=event_pk)
         comment = Comment.objects.get(pk=comment_pk)
         comment.delete()
-        return redirect('event_detail', event.slug )
+        return JsonResponse({'msg': 'Your comment was deleted'})
+
+
+def updateComment(request):
+    if request.POST.get('action') == 'update':
+        comment_pk = request.POST.get('comment_pk')
+        comment_body = request.POST.get('comment_body')
+        comment = Comment.objects.get(pk=comment_pk)
+        comment.body = comment_body
+        comment.save()
+        return JsonResponse({'msg': 'Your comment was updated'})
+

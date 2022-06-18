@@ -8,27 +8,29 @@
     </div>
 </div>
 
-    {% for comment in comments %}
-    <div class="media row text-muted pt-3  ">
-        <div class="d-flex justify-content-between">
-        <strong class="d-block text-gray-dark">@{{comment.user.username}}</strong>
-                {% if comment.user == request.user %}
-                 <div class="edit-delete">
-                    <a href=""><i data-bs-toggle="modal" ata-bs-target="#comment-modal" id="update-comment-btn" class="fas px-2 fa-edit"></i></a>
-                    <i data-bs-toggle="modal" data-p='{{comment.pk}}' data-bs-target="#delete-comment-modal" id="delete-comment-btn" class="fas fa-trash-alt"></i>
-                </div>
-                {% endif %}  
+    <div class="comments-wrapper">
+        {% for comment in comments %}
+        <div class="media row text-muted pt-3  ">
+            <div class="d-flex justify-content-between">
+            <strong class="d-block text-gray-dark">@{{comment.user.username}}</strong>
+                    {% if comment.user == request.user %}
+                     <div class="edit-delete">
+                        <i data-bs-toggle="modal" data-p={{comment.pk}} data-bs-target="#update-comment"  id="update-comment-button" class="fas px-2 fa-edit"></i> 
+                        <i data-bs-toggle="modal" data-p='{{comment.pk}}' data-bs-target="#delete-comment-modal" id="delete-comment-btn" class="fas fa-trash-alt"></i>
+                    </div>
+                    {% endif %}
+            </div>
         </div>
+        
+        <div class="row border-bottom pb-3 mb-0 border-gray">
+        
+            {{comment.body|linebreaksbr}}
+        </div>
+        {% endfor %}
     </div>
-    
-    <div class="row border-bottom pb-3 mb-0 border-gray">
-      
-
-        {{comment.body|linebreaksbr}}
-    </div>
-    {% endfor %}
 
 {% include 'event/snippets/create_comment_modal.html' %}
 {% include 'event/snippets/delete_comment_modal.html' %}
-    
+{% include 'event/snippets/update_comment_modal.html' %}
+
 </div>

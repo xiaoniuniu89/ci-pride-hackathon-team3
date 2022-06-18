@@ -1,0 +1,64 @@
+<!-- Modal -->
+<div class="modal fade" data-pk='1' data-epk='{{event.pk}}' id="update-comment" tabindex="-1" aria-labelledby="update-comment" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="update-comment-title">Update Comment</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      <div class="modal-body">
+       
+            <div class="mb-3">
+                <label for="comment-body" class="form-label">Comment</label>
+                <textarea name='comment_body' required type="text" class="form-control" id="update-comment-body" aria-describedby="comment-body" ></textarea>
+            </div>
+            
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button id="update-comment-btn" class="btn btn-primary">Save Changes</button>
+    </div>
+ 
+  </div>
+</div>
+<script>
+
+        document.querySelectorAll('.fa-edit').forEach(element => {
+    element.addEventListener('click', (e) => {
+    let newValue = e.target.getAttribute('data-p')
+    document.querySelector('#update-comment').setAttribute('data-pk', newValue)
+    document.querySelector('#update-comment-body').innerHTML = e.target.parentNode.parentNode.parentNode.nextElementSibling.innerHTML.trim()
+    
+})
+})
+</script>
+<script>
+
+    // ajax call to update comment
+    $(document).on('click', '#update-comment-btn', function(e){
+        
+        
+      document.querySelector('#update-comment-btn').setAttribute('disabled', true)
+        $.ajax({
+        type: 'POST',
+        url: '{% url "comment_update" %}',
+        data: {
+            comment_pk: $("#update-comment").attr('data-pk'),
+            comment_body: $("#update-comment-body").val(),
+            
+            csrfmiddlewaretoken: "{{csrf_token}}",
+            action: 'update'
+        },
+        success: function(json){
+            alert(json.msg)
+          window.location.replace(window.location.href)
+           
+        },
+        error: function(xhr, errmsg, err){}
+    }); 
+        
+        
+  });
+    
+</script> 
