@@ -22,11 +22,14 @@
 </div>
 <script>
   try{
-     document.querySelector('.edit-delete').addEventListener('click', (e) => {
+     document.querySelectorAll('.edit-delete .fa-trash-alt').forEach(trashcan => {
+      trashcan.addEventListener('click', (e) => {
     let newValue = e.target.getAttribute('data-p')
+    console.log(newValue)
     document.querySelector('#delete-comment-modal').setAttribute('data-pk', newValue)
     document.querySelector('.edit-delete').removeEventListener('click', () => {console.log('removed')})
     })
+     })
   }catch {
     console.log('waiting for comments')
   }
@@ -36,8 +39,11 @@
 
 </script>
 <script>
+
+
     // ajax call to delete comment
     $(document).on('click', '#confirm-delete-btn', function(e){
+      document.querySelector('#confirm-delete-btn').setAttribute('disabled', true)
         $.ajax({
         type: 'POST',
         url: '{% url "comment_delete" %}',
