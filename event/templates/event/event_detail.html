@@ -1,17 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block extra_css %}
+<link rel='stylesheet' href="{% static 'event/css/event_info.css' %}" />
 
+{% endblock extra_css %}
 {% block content %}
-<div class="container">
-    <div class="card m-1">
-        <img src="{{event.featured_image.url}}" alt="">
-        <h2>{{event.name}}</h2>
-        <p>{{event.description}}</p>
-        <p>{{event.get_donation_total}}
-        <a href="{% url 'event_update' event.slug %}" class="btn btn-primary">Update</a>
-        <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#event_delete_modal">Delete</button>
-    </div>
-</div>
+{% include 'event/snippets/event_info.html' %}
+
 
 {% include 'event/snippets/delete_modal.html' %}
 {% endblock content %}
