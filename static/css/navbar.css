@@ -1,3 +1,49 @@
-nav {
+/* --------- Navigation bar --------*/
+.navbar{
+    margin-bottom:0;
+    border:0;
+    width:100%;
     background-color: var(--purple);
+    padding: .4rem 1rem;
+    text-align: center;
+}
+
+.navbar{
+    height:5rem;
+}
+
+.navbar-brand{
+    font-weight:500;
+    font-size:1.7rem;
+    color:white;
+    letter-spacing: 3px;
+    padding:5px 2px 5px 4px;
+}
+
+.navbar-nav li {
+    font-weight:200;
+    font-size:1.2rem;
+    color:white;
+    letter-spacing:2px;  
+}
+
+.nav-item {
+    padding:4px 3px 5px 3px;
+    color: white;
+}
+
+.nav-item a:hover{
+    cursor:pointer;
+    box-shadow:0 0.1rem 1.2rem 0 rgba(226, 230, 15, 0.152);
+    color: var(--yellow);
+    border-radius:3px;
+    background-color: white; 
+}
+.navbar .navbar-toggler {
+    border: 0;
+}
+
+
+#navbarSupportedContent{
+    background-color: var(--purple);;
 }

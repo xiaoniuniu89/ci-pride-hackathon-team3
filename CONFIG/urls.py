@@ -20,7 +20,6 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('', TemplateView.as_view(template_name='base.html')),
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('donate/', include('charity.urls')),

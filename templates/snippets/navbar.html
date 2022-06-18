@@ -1,4 +1,7 @@
-
+{% load static %}
+{% block extra_css %}
+<link rel='stylesheet' href="{% static 'css/navbar.css' %}" />
+{% endblock extra_css %}
 <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
       <a class="navbar-brand" href="{% url 'home' %}"> US TOGETHER </a>
@@ -24,16 +27,16 @@
                   {% if request.user.is_superuser %}
                     <li><a class="dropdown-item" href="#">MANAGE EVENTS</a></li>
                   {% endif %}
-                    <li><a class="dropdown-item" href="#">LOGOUT</a></li>
+                    <li><a class="dropdown-item" href="{% url 'account_logout' %}">LOGOUT</a></li>
             </ul>
           </li>
           {% else %}
           
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">SIGN UP</a>
+            <a class="nav-link active" aria-current="page" href="{% url 'account_signup' %}">SIGN UP</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Login</a>
+            <a class="nav-link active" aria-current="page" href="{% url 'account_login' %}">Login</a>
           </li>
           {% endif %}
           
