@@ -12,11 +12,12 @@
     <div class="media row text-muted pt-3  ">
         <div class="d-flex justify-content-between">
         <strong class="d-block text-gray-dark">@{{comment.user.username}}</strong>
-
-                <div class="edit-delete">
+                {% if comment.user == request.user %}
+                 <div class="edit-delete">
                     <i data-toggle="modal" data-target="#review-modal" id="update-review-btn" class="fas px-2 fa-edit"></i>
                     <i data-toggle="modal" data-target="#delete-review-modal" id="delete-review-btn" class="fas fa-trash-alt"></i>
                 </div>
+                {% endif %}  
         </div>
     </div>
     
