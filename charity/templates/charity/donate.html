@@ -20,10 +20,10 @@
             <div class="col-12 col-md-6 donations-container text-black">
                 <form method="POST" action="{% url 'make-donation' %}" class="form mb-2 text-black" enctype="multipart/form-data">
                     {% csrf_token %}
-                    {{ form }}
+                    {{ form | crispy }}
                     <div class="text-center pt-4 pb-4">
-                        <a class="btn btn-outline-black text-uppercase" href="{% url 'home' %}">Cancel</a>
-                        <button class="btn donate-btn text-uppercase" type="submit">MAKE DONATION</button>
+                        <a class="btn btn-outline-black text-uppercase" href="{% url 'donate' %}">Cancel</a>
+                        <button class="btn  btn-outline-black text-uppercase" type="submit">MAKE DONATION</button>
                     </div>
                 </form>
             </div>            
