@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+import uuid
 # real time chat
 # contacting the organizer - inbox for the event / group chat for volunteers  - users have an inbox
 # comments
@@ -14,6 +14,7 @@ class Event(models.Model):
     featured_image = models.ImageField(default='default.jpg', upload_to='event_featured_images')
     description = models.TextField()
     slug = models.SlugField(max_length=255) # make unique
+    slug_end = models.UUIDField(default=uuid.uuid4)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     location = models.CharField(max_length=50) # look in to cities
@@ -30,6 +31,12 @@ class Event(models.Model):
         """ method to return donation total"""
         donation = Donation.objects.get(event_id=self.id)
         return donation.total
+
+    def save(self, *args, **kwargs):
+        # image_resize(self.featured_image, 512, 512)
+        self.slug += f'-{self.slug_end}'
+        super().save(*args, **kwargs)
+
     
 
 class Donation(models.Model):
