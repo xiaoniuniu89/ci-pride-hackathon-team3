@@ -1,0 +1,149 @@
+/* homepage */
+.header-text {
+    text-align: center;
+    line-height: 2rem;
+    color: var(--red)
+}
+
+/* your CSS goes here*/
+.title {
+    color: #fa9746;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.title::before {
+    position: absolute;
+    left: -29px;
+    top: 0;
+    height: 20px;
+    width: 20px;
+    transform: rotate(45deg);
+    background-color: #7499f1;
+    box-shadow: 0px 4px 4px 0px #aaa;
+    border-radius: 4px;
+    content: '';
+}
+.title::after {
+    position: absolute;
+    left: -19px;
+    top: 25px;
+    height: 14px;
+    width: 14px;
+    transform: rotate(45deg);
+    background-color: #7499f1;
+    box-shadow: 0px 4px 4px 0px #aaa;
+    border-radius: 4px;
+    content: '';
+}
+ /* services */
+.services {
+    padding:40px;
+    position: relative;
+}
+.services .square {
+    height: 100px;
+    width: 100px;
+    margin: 30px auto 40px;
+    position: relative;
+    border-radius: 15px;
+    transform: rotate(45deg);
+    padding: 10px;
+    background-color:BBAABF;
+    box-shadow: 0px 0px 27px 0px #ccc;
+    border: 2px dotted #eaf3fa;
+}
+.square i {
+    transform: rotate(315deg);
+    display: block;
+    color: var(--yellow);
+    font-size: 40px;
+    padding-top: 17px;
+    padding-right: 14px;
+}
+.services .square::before {
+    position: absolute;
+    left: -10px;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background-color: var(--orange-light);
+    content: '';
+}
+.services .square::after {
+    position: absolute;
+    left: 50px;
+    top: 66px;
+    width: 1px;
+    height: 88%;
+    background-color:var(--orange-light);
+    content: '';
+    transform: rotate(90deg);
+}
+.services .serv .num{
+    width: 60px;
+    height: 60px;
+    background-color: #7499f1;
+    box-shadow: 0px 0px 15px 0px #00a9d3;
+    margin: -38px auto 15px auto;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 30px;
+    padding-top: 7px;
+    border: 1px dashed;
+}
+
+.services .serv h5 {color: var(--brown);}
+.services .serv p {color: var(--red)}
+.services .serv hr {
+    width: 30px;
+    border-top: 3px solid rgb(0 169 211);
+}
+
+.card-container {
+    padding: 2rem;
+}
+
+.card-headertext {
+font-size: 18px;
+text-align: left;
+padding-left: 5px;
+line-height: 159%;
+}
+
+.card-subheader {
+font-size: 14px;
+text-align: left;
+color:black;
+}
+
+.red{
+    color:var(--red);
+}
+.text-color{
+    text-align:left;
+}
+
+.card-style{
+    width: 18rem !important
+}
+
+.view-btn{
+    border:1px solid black;
+}
+
+.view-btn:hover{
+    border:1px solid grey;
+}
+
+
+/* for home page */
+@media only screen and (max-width: 768px) {
+    .space-cards {
+        padding-bottom: 1.5rem;
+    }
+
+    .card-style {
+        width: 100% !important;
+    }
+}
