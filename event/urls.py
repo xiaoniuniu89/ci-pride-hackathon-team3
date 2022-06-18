@@ -5,7 +5,8 @@ from .views import (
     eventCreate,
     EventUpdateView,
     eventDelete,
-    createComment
+    createComment,
+    deleteComment
 )
 
 urlpatterns = [
@@ -16,4 +17,5 @@ urlpatterns = [
     path('update/<str:slug>/', EventUpdateView.as_view(), name='event_update'),
     path('delete/<int:pk>/', eventDelete, name='event_delete'),
     path('create-comment/<int:pk>/', createComment, name='comment_create'),
+    path('comment/delete/<int:pk>', deleteComment, name='comment_delete'),
 ]

@@ -4,8 +4,13 @@
 <link rel='stylesheet' href="{% static 'event/css/event_info.css' %}" />
 
 {% endblock extra_css %}
+
+{% block extra_js %}
+<script src={% static 'event/js/event.js' %}></script>
+{% endblock %}
 {% block content %}
 {% include 'event/snippets/event_info.html' %}
 {% include 'event/snippets/comments.html' %}
 {% include 'event/snippets/delete_modal.html' %}
 {% endblock content %}
+

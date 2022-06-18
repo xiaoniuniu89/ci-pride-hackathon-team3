@@ -1,4 +1,4 @@
-<div class="container col-12 col-sm-10 col-lg-8 py-5" >
+<div class="container col-12 col-sm-10 col-lg-8 py-5 comments-container" >
 <div class="row">
     <div class="col-6 text-start d-flex justify-content-between align-items-center">
         <h5 class="display-5 ">Comments</h5>
@@ -14,8 +14,8 @@
         <strong class="d-block text-gray-dark">@{{comment.user.username}}</strong>
                 {% if comment.user == request.user %}
                  <div class="edit-delete">
-                    <i data-toggle="modal" data-target="#review-modal" id="update-review-btn" class="fas px-2 fa-edit"></i>
-                    <i data-toggle="modal" data-target="#delete-review-modal" id="delete-review-btn" class="fas fa-trash-alt"></i>
+                    <a href=""><i data-bs-toggle="modal" ata-bs-target="#comment-modal" id="update-comment-btn" class="fas px-2 fa-edit"></i></a>
+                    <a href="{% url 'comment_delete' comment.pk %}"><i data-bs-target="#delete-comment-modal" id="delete-comment-btn" class="fas fa-trash-alt"></i></a>
                 </div>
                 {% endif %}  
         </div>
