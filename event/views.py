@@ -7,7 +7,7 @@ from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 
 from .forms import EventForm
-from .models import Event
+from .models import Event, Donation, Comment
 
 class EventListView(ListView):
     """ list view of all events """
@@ -16,7 +16,8 @@ class EventListView(ListView):
 
 def eventDetail(request, slug):
     event = get_object_or_404(Event, slug=slug)
-    return render(request, 'event/event_detail.html', {'event': event})
+    comments = Comment.objects.filter(event=event)
+    return render(request, 'event/event_detail.html', {'event': event, 'comments': comments})
 
 
 def eventCreate(request):
@@ -30,6 +31,7 @@ def eventCreate(request):
             event = form.save(commit=False)
             event.organizer = request.user
             event.save()
+            Donation.objects.create(event=event)
             messages.success(request, f'created')
            
             return redirect('event_list')

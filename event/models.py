@@ -6,12 +6,11 @@ import uuid
 # comments
 
 
-
 class Event(models.Model):
     """Model for events"""
 
     name = models.CharField(max_length=50)
-    featured_image = models.ImageField(default='default.jpg', upload_to='media/event_featured_image')
+    featured_image = models.ImageField(default='default.jpg', upload_to='media')
     description = models.TextField()
     slug = models.SlugField(default=uuid.uuid4) # make unique
     created = models.DateTimeField(auto_now_add=True)
@@ -31,9 +30,6 @@ class Event(models.Model):
         donation = Donation.objects.get(event_id=self.id)
         return donation.total
 
-   
-
-    
 
 class Donation(models.Model):
     """model for donation"""
@@ -42,6 +38,12 @@ class Donation(models.Model):
 
     def __str__(self):
         return f'Donation for {self.event.name}'
+
+
+class Comment(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    body = models.TextField()
 
 # class Volunteer(models.Model):
 #     event = models.ForeignKey(Event, on_delete=models.CASCADE)
