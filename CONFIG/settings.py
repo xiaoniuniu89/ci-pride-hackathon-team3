@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'charity',
     'home',
     'event',
-    'UserProfile',
+    'user_profile'
 ]
 
 MIDDLEWARE = [
