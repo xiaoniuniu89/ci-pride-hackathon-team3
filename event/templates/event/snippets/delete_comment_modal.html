@@ -36,9 +36,6 @@
 
 </script>
 <script>
-
-
-
     // ajax call to delete comment
     $(document).on('click', '#confirm-delete-btn', function(e){
         $.ajax({
@@ -51,7 +48,7 @@
             action: 'delete'
         },
         success: function(json){
-            window.location.replace(window.location.href)
+          window.location.replace(window.location.href)
            console.log('worked')
         },
         error: function(xhr, errmsg, err){}
