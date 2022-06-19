@@ -54,11 +54,8 @@
     <div class="msg-wrapper">
     {% if messages %}
         {% for msg in messages %}
-            <div class="alert alert-{{msg.tags}} alert-dismissible fade show" role="alert">
+            <div class="messages-flash alert alert-{{msg.tags}} alert-dismissible fade show" role="alert">
                 <p class="text-center">{{msg}}</p>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
             </div> 
         {% endfor %}
     {% endif %}

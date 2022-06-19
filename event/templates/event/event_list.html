@@ -5,9 +5,13 @@
 {% endblock extra_css %}
 {% block content %}
 
+
     
 <div class="container py-5">
-    
+     <div class='d-flex justify-content-center align-items-center py-5'>
+          <h1>Events</h1>
+          <a href="{% url 'event_create' %}" class="d-inline mx-3 btn btn-info" >Organize something!</a>
+        </div>
     <div class="row">
         <div class="event-container col-10 offset-1">
                 <div class="row event-row">

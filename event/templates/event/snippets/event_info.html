@@ -25,9 +25,9 @@
                         </div>
                         <div class="col-6">
                                 <button data-bs-toggle="modal" data-bs-target="#donate-modal" type="button" id='donate-btn' value={{event.id}} class="btn btn-info btn-sm">Donate</button>
-                                <button type="button" id='volunteer-btn' value={{event.id}} class="btn btn-success btn-sm">Volunteer</button>
+                                <button data-bs-toggle="modal" data-bs-target="#volunteer-modal"  style="color: white!important;" id='volunteer-btn' class="btn btn-success btn-sm">Volunteer</button>
                                 {% if request.user == event.organizer %}
-                                <a type="button" href="{% url 'event_update' event.slug %}" class="btn btn-info btn-sm">Update</a>
+                                <a style="color: black!important;" type="button" href="{% url 'event_update' event.slug %}" class="btn btn-info btn-sm">Update</a>
                                 <button data-bs-toggle="modal" data-bs-target="#delete-event-modal" type="button" class="btn btn-danger btn-sm">Delete</button>
                                 {% endif %}
                         </div>
