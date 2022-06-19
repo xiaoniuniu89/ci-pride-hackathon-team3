@@ -11,7 +11,7 @@
          <div class="carousel-content">
              <div class="carousel-overlay"></div>
                  <h2 class="callout logo-font"></h2>
-                 <a href="" class="cta-btn btn btn-lg text-uppercase py-3 rainbow-blur">Get Involved!</a>
+                 <a href="{% url 'event_list' %}" class="cta-btn btn btn-lg text-uppercase py-3 rainbow-blur">Get Involved!</a>
         </div>
           <div class="carousel-item active">
             <div class="d-flex align-items-center justify-content-center min-vh-100">
@@ -83,7 +83,6 @@
                     </div>
                     <div class="serv">
                         <h5>Team</h5>
-                        <p>Get to know the  our vibrant team. </p>
                     </div>
                 </div>
             </div>
@@ -115,7 +114,7 @@
                                             <div class="var">
                                                 <h6 class="card-title text-center card-headertext mb-3">{{event.name}}
                                                 </h6>
-                                                <hr class="purple mb-4">
+                                                <hr class="card-rainbow mb-4">
                                                 <p class="text-color text-center red"><small>{{event.date}} - {{event.time}}</small></p>
                                                 <p class="card-subheader text-center mb-2">{{event.loacation}}</p>
                                                 <p class="card-subtitle mb-2 text-muted text-center card-subheader"><strong>
