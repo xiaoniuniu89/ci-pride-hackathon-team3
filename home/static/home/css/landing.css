@@ -2,7 +2,7 @@
 .header-text {
     text-align: center;
     line-height: 2rem;
-    color: var(--orange)
+    color: var(--orange);
 }
 
 /* your CSS goes here*/
@@ -150,6 +150,18 @@ color:black;
     padding-top: 2rem;
     color: var(--brown);
 }
+
+.btn-black{
+    border: 1px solid grey;
+    background-color: var(--blue);
+    color: white;
+}
+
+.btn-black:hover{
+    cursor:pointer;
+    box-shadow:0 0 1rem 0 grey;
+}
+
 
 
 /* for home page */
