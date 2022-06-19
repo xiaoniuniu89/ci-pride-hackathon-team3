@@ -2,7 +2,7 @@
 .header-text {
     text-align: center;
     line-height: 2rem;
-    color: var(--orange)
+    color: var(--orange);
 }
 
 /* your CSS goes here*/
@@ -161,6 +161,8 @@ color:black;
     cursor:pointer;
     box-shadow:0 0 1rem 0 grey;
 }
+
+
 
 /* for home page */
 @media only screen and (max-width: 768px) {
