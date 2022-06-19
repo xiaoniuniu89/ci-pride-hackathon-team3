@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_header %}
+    <div class="header-container container-fluid">
+        <div class="row ">
+            <div class="col-sm-12 header-image">
+                <h2 class="hero-image-text"> BE AN ALLY </h2>
+                </p> 
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col text-center mt-4 mb-4">
+                <h4 class="header-text text-capitalize">Access Forbidden!</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-8 offset-md-2 text-center pt-3 pb-2">
+                <p class="text-center pb-3 lead red">You do not have access to this page.</p>
+            </div>
+            <div class="col-12 text-center mb-5">
+                <a href="{% url 'home' %}" class="btn btn-black rounded-0 text-uppercase mt-3 mb-4">Return Home</a>
+            </div>           
+        </div>
+    </div>
+{% endblock %}

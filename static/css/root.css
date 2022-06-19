@@ -29,5 +29,25 @@ footer {
     padding:0;
 }
 
+.header-container {
+    width:100%;
+    background: url('/media/heroimage.jpeg') no-repeat center center fixed;  
+    object-fit: cover;
+    padding-top: 4rem;
+    height: 45vh;
+}
 
+.text-black{
+    color:var(--orange);
+}
 
+.header-text{
+    color:var(--brown);
+    letter-spacing:1px;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.red{
+    color:var(--red);
+}
