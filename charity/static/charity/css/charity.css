@@ -98,11 +98,23 @@
     text-transform: uppercase;
 }
 
+.list-of-charities a{
+    text-decoration: none;
+    color: var(--brown);
+}
+
+.list-of-charities a:hover{
+    color: var(--red);
+}
+
 .org{
     padding-top: 2rem;
     padding-bottom: 3rem;
 }
 
+.list-ways{
+    color:var(--brown)
+}
 
 /* donation page */ 
 .donations-container{
@@ -123,6 +135,27 @@
 }
 
 
+/* stripe payment */
+.StripeElement,
+.StripeElement,
+.stripe-style-input {
+    box-sizing: border-box;
+    height: 40px;
+    padding: 10px 12px;
+    border: 1px solid transparent;
+    border-radius: 0px;
+    box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--webkit-autofill {
+    background-color: #fefde5 !important;
+}
+
+#payment-form .form-control,
+#card-element {
+    color: #000;
+    border: 1px solid #545b62;
+} 
 
 .donation-form{
     padding:2rem 0;
@@ -172,16 +205,16 @@
 
 
 .loader {
-  border: 1.1em solid #f3f3f3; /* Light grey */
-  border-top: .8em solid #3498db; /* Blue */
-  border-radius: 50%;
-  width: 3em;
-  height: 3em;
-  animation: spin 1s linear infinite;
-  margin: 0 auto;
+    border: 1.1em solid #f3f3f3; /* Light grey */
+    border-top: .8em solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 3em;
+    height: 3em;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
