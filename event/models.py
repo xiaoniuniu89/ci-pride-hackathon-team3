@@ -31,7 +31,7 @@ class Event(models.Model):
     organizer = models.ForeignKey(User, on_delete=models.CASCADE)
     date = models.DateField()
     time = models.TimeField()
-    volunteer_list = models.ManyToManyField(User, blank=True, related_name='volunteers')
+    
 
 
     def __str__(self):
@@ -41,6 +41,10 @@ class Event(models.Model):
         """ method to return donation total"""
         donation = Donation.objects.get(event_id=self.id)
         return donation.total
+
+class VolunteerList(models.Model):
+    volunteers = models.ManyToManyField(User)
+    event = models.ForeignKey(Event, on_delete=models.CASCADE, default=13)
 
 
 class Donation(models.Model):

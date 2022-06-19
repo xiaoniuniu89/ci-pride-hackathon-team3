@@ -1,0 +1,51 @@
+
+<!-- Modal -->
+<div class="modal fade" id="message-volunteers" data-pk='1' tabindex="-1" aria-labelledby="message-volunteersLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="message-volunteers-label">What would you like to say?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <label for="email-body" class="form-label">Message</label>
+                <textarea name='email_body' required type="text" class="form-control" id="email-body" aria-describedby="comment-body" ></textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" id="email-volunteers-btn" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+const profileUrl = "{% url 'profile' %}"
+    // ajax call to update comment
+    $(document).on('click', '#email-volunteers-btn', function(e){
+        
+        
+      document.querySelector('#email-volunteers-btn').setAttribute('disabled', true)
+        $.ajax({
+        type: 'POST',
+        url: '{% url "email_volunteers" %}',
+        data: {
+            event_pk: $("#message-volunteers").attr('data-pk'),
+            email_body: $("#email-body").val().trim(),
+            csrfmiddlewaretoken: "{{csrf_token}}",
+            action: 'email'
+        },
+        success: function(json){
+            alert(json.msg)
+          window.location.replace(profileUrl)
+           
+        },
+        error: function(xhr, errmsg, err){}
+    }); 
+        
+        
+  });
+    
+</script> 
+

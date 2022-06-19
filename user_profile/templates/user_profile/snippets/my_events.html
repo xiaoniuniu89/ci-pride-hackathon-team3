@@ -5,16 +5,20 @@
     <thead>
       <tr>
         <th scope="col">Event</th>
-        <th scope="col">Date</th>
         <th scope="col">Donation Total</th>
+
+        <th scope="col">Volunteers</th>
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
     {% for event in events  %}
     <tr>
         <td><a href={% url 'event_detail' event.slug %}>{{event.name}}</a></td>
-        <td>{{event.date}}</td>
+
         <td>{{event.get_donation_total}}</td>
+        <td>0</td>
+        <td><button data-bs-toggle="modal" data-p='{{event.pk}}' data-bs-target="#message-volunteers" class="email-volunteers btn btn-success">Email Volunteers</button></td>
     </tr>
         
     {% endfor %}
@@ -25,3 +29,15 @@
     {% endif %}
 
 </div>
+
+{% include 'user_profile/snippets/send_volunteer_message.html' %}
+
+<script>
+
+    document.querySelectorAll('.email-volunteers').forEach(element => {
+    element.addEventListener('click', (e) => {
+    let newValue = e.target.getAttribute('data-p')
+    document.querySelector('#message-volunteers').setAttribute('data-pk', newValue)
+})
+})
+</script>

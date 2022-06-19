@@ -12,7 +12,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.decorators import login_required
 
 from .forms import EventForm, CommentForm
-from .models import Event, Donation, Comment
+from .models import Event, Donation, Comment, VolunteerList
 
 class EventListView(ListView):
     """ list view of all events """
@@ -41,7 +41,7 @@ def eventCreate(request):
             event.save()
             Donation.objects.create(event=event)
             messages.success(request, f'created')
-           
+            VolunteerList.objects.create(event=event)
             return redirect('event_list')
 
     else:
