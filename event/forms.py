@@ -27,11 +27,12 @@ class EventForm(forms.ModelForm):
     class Meta:
         model = Event
         exclude = ('organizer', 'slug', 'volunteer_list')
-    
+
         widgets = {
             'date': DatePicker(),
             'time': TimePicker(),
         }
+
 
 class CommentForm(forms.ModelForm):
     """comment form """
