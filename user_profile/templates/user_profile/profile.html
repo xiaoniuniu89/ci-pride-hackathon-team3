@@ -10,9 +10,10 @@
 
     <div class="pt-5">
       <div class="row mb-2">
-        <h1>Welcome {{user.username}}</h1>
-        <a href="{% url 'event_create' %}" class="btn btn-primary">New Event</a>
-          
+        <div class='d-flex justify-content-start align-items-center'>
+          <h1>Welcome {{user.username}}</h1>
+          <a href="{% url 'event_create' %}" class="d-inline mx-3 btn btn-primary" >New Event</a>
+        </div>
         
       </div>
       <div class="row mb-2">

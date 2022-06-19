@@ -26,7 +26,7 @@ class EventForm(forms.ModelForm):
 
     class Meta:
         model = Event
-        exclude = ('organizer', 'slug', 'volunteer_list', 'slug_end')
+        exclude = ('organizer', 'slug', 'volunteer_list')
     
         widgets = {
             'date': DatePicker(),

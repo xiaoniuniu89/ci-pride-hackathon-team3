@@ -11,8 +11,8 @@ class Event(models.Model):
 
     ConsentWorkshop = 'Consent Workshop'
     OutrightInternational = 'Outright International'
-    GlobalGiving = 'GlobalGiving'
-    MicroRainbow = 'MicroRainbow'
+    GlobalGiving = 'Global Giving'
+    MicroRainbow = 'Micro Rainbow'
     SELECT = [
         (ConsentWorkshop, 'Consent Workshop'),
         (OutrightInternational, 'Outright International'),
@@ -20,7 +20,7 @@ class Event(models.Model):
         (MicroRainbow, 'Micro Rainbow'),
     ]
     
-    charities = models.CharField(choices=SELECT, max_length=22)
+    charity = models.CharField(choices=SELECT, max_length=22)
     name = models.CharField(max_length=50)
     featured_image = models.ImageField(default='default.jpg', upload_to='media')
     description = models.TextField()

@@ -13,6 +13,7 @@
            
             <div></div>
                 <p><span class="lead font-weight-bold">{{ event.organizer }}</span> (Organizer)</p>
+                <p><span class="lead font-weight-bold">{{ event.charity }}</span> (Charity)</p>
                 
                 <div class="event-description">{{ event.description|linebreaks }}</div>
                 <div>
@@ -25,6 +26,10 @@
                         <div class="col-6">
                                 <button data-bs-toggle="modal" data-bs-target="#donate-modal" type="button" id='donate-btn' value={{event.id}} class="btn btn-info btn-sm">Donate</button>
                                 <button type="button" id='volunteer-btn' value={{event.id}} class="btn btn-success btn-sm">Volunteer</button>
+                                {% if request.user == event.organizer %}
+                                <a type="button" href="{% url 'event_update' event.slug %}" class="btn btn-info btn-sm">Update</a>
+                                <a type="button" href="{% url 'event_delete' event.pk %}" class="btn btn-danger btn-sm">Delete</a>
+                                {% endif %}
                         </div>
                     </div>
                 </div>
