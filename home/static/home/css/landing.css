@@ -151,17 +151,6 @@ color:black;
     color: var(--brown);
 }
 
-.btn-black{
-    border: 1px solid grey;
-    background-color: var(--blue);
-    color: white;
-}
-
-.btn-black:hover{
-    cursor:pointer;
-    box-shadow:0 0 1rem 0 grey;
-}
-
 /* for home page */
 @media only screen and (max-width: 768px) {
     .space-cards {
