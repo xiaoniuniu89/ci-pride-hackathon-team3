@@ -124,7 +124,7 @@
 
 
 /* stripe payment */
-.StripeElement,
+/* .StripeElement,
 .stripe-style-input {
     box-sizing: border-box;
     height: 40px;
@@ -151,7 +151,7 @@
 #card-element {
     color: #000;
     border: 1px solid #545b62;
-}
+} */
 
 
 .donation-form{
@@ -198,4 +198,20 @@
 
 .text-black{
     color:var(--red);
+}
+
+
+.loader {
+  border: 1.1em solid #f3f3f3; /* Light grey */
+  border-top: .8em solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
