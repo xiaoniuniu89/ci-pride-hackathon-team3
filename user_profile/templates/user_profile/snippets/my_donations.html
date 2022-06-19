@@ -1,17 +1,21 @@
 <div class="row wrap-land clearfix library-wrapper content-div" id='donations-div'>
             
     {% if donations %}
+    <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Event</th>
+        <th scope="col">Donation Total</th>
+      </tr>
+    </thead>
+    <tbody>
     {% for donation in donations  %}
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 py-5">
-        <a href="" target="_blank">
-            <div class=" ">
-            </div>
-        </a>
-        <div class='d-flex justify-content-center pt-2'>
-            
-        </div>
-        </div>
+     <tr>
+        <td><a href={% url 'event_detail' donation.event.slug %}>{{donation.event.name}}</a></td>
+        <td>{{donation.amount}}</td>
+    </tr>
     {% endfor %}
+    </table>
     {% else %}
      <div class="container d-flex justify-content-center mt-5"><a class='btn btn-info text-center' href="{% url 'event_list' %}">Find an event to donate to!</a></div>
     {% endif %}
