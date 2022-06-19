@@ -179,3 +179,19 @@
     cursor:pointer;
     box-shadow:0 0 1rem 0 #1613b0;
 }
+
+.sucess-container{
+    padding:2rem 0;
+}
+
+.header-text {
+    text-align: center;
+    line-height: 2rem;
+    color: var(--red)
+}
+
+.donate-us{
+    color: var(--brown);
+    font-size:1.2rem;
+    padding: 1rem 0;
+}

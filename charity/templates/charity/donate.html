@@ -23,11 +23,7 @@
                     <div class="card-panel">
                         {% csrf_token %}
                         <fieldset class="rounded px-3 mb-5">
-                            <legend class="fieldset-label lead color-pink text-black px-2 w-auto">Delivery</legend>
-                            {{ form.email| as_crispy_field }}
-                            {{ form.event_name | as_crispy_field }}
-                            {{ form.charities | as_crispy_field }}
-                            {{ form.amount | as_crispy_field }}
+                            {{ form }}
                         </fieldset>
                 
                         <!--User's payment information-->
