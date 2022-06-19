@@ -147,3 +147,35 @@
     background-color: #fefde5 !important;
 }
 
+#payment-form .form-control,
+#card-element {
+    color: #000;
+    border: 1px solid #545b62;
+}
+
+
+.donation-form{
+    padding:2rem 0;
+}
+
+.card-panel{
+    border: 1px solid grey;
+    padding: 24px; 
+}
+
+.support-us{
+    color: var(--brown);
+    font-size:1.6rem;
+    padding: 2rem 0;
+}
+
+.btn-black{
+    border: 1px solid grey;
+    background-color: var(--blue);
+    color: white;
+}
+
+.btn-black:hover{
+    cursor:pointer;
+    box-shadow:0 0 1rem 0 #1613b0;
+}

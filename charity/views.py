@@ -17,7 +17,6 @@ def makedonations(request):
     """ A view to return the donation page 
     and handle all donations"""
 
-
     if request.method == 'POST':
         form = DonationForm(request.POST)
         if form.is_valid():
@@ -27,7 +26,7 @@ def makedonations(request):
             messages.info(request, 'Successfully made a donation')
             return redirect(reverse('donate'))
         else:
-            messages.error(request, 'Sorry we cannot add Product review. \
+            messages.error(request, 'Sorry we cannot add Donation. \
                                 Please ensure all fields are completed.')
     else:
         form = DonationForm()
