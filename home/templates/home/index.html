@@ -100,59 +100,38 @@
             </div>
         </div>
 
-        <div class="row text-center card-container">
-            <div class="col-sm-6 col-lg-4 mb-2 space-cards">
-                <div class="card card-style mx-auto">
-                    <img src="{{ MEDIA_URL }}heroimage.jpeg"
-                        class="card-img-top" alt="name of event">
-                    <div class="card-body">
-                        <h6 class="card-title card-headertext">TheBloq Pride Block Party June Bank Holiday Weekend 2022
-                        </h6>
-                        <p class="text-color red"><small>Sat, Jun 30,15:00</small></p>
-                        <p class="card-subheader mb-2">Event Space TBA</p>
-                        <p class="text-color"><small>Starts at €24</small></p>
-                        <p class="card-subtitle mb-2 text-muted card-subheader"><strong>
-                            User.name |
-                        </strong> 6K USERS</p>
-                        </p>
+        <div class="row">
+            <div class="event-container col-10 offset-1">
+                    <div class="row event-row">
+                        {% for event in event %}
+                        <div class="col-sm-6 col-md-6 col-lg-6 col-xl-4">
+                            <div class="card h-100 border-0 space-card">
+                                <a href="{% url 'event_detail' event.slug %}">
+                                    <div class="space-cards mb-4">
+                                        <div class="card event-card card-style mx-auto">
+                                            <img src="{{event.featured_image.url}}"
+                                                class="card-img-top" alt="{{event.name}}">
+                                               
+                                            <div class="var">
+                                                <h6 class="card-title text-center card-headertext mb-3">{{event.name}}
+                                                </h6>
+                                                <hr class="purple mb-4">
+                                                <p class="text-color text-center red"><small>{{event.date}} - {{event.time}}</small></p>
+                                                <p class="card-subheader text-center mb-2">{{event.loacation}}</p>
+                                                <p class="card-subtitle mb-2 text-muted text-center card-subheader"><strong>
+                                                    {{event.organizer.username}} |
+                                                </strong> (organiser)</p>
+                                                </p>
+                                            </div>
+                                              
+                                        </div>
+                                      
+                                        </div>
+                             </a>
+                            </div>
+                        </div>    
+                        {% endfor %}    
                     </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-lg-4 mb-2 space-cards">
-                <div class="card card-style mx-auto">
-                    <img src="{{ MEDIA_URL }}heroimage.jpeg"
-                        class="card-img-top" alt="">
-                    <div class="card-body">
-                        <h6 class="card-title card-headertext">TheBloq Pride Block Party June Bank Holiday Weekend 2022
-                        </h6>
-                        <p class="text-color red"><small>Sat, Jun 30,15:00</small></p>
-                        <p class="card-subheader mb-2">St Stephens Park</p>
-                        <p class="text-color"><small>Starts at €24</small></p>
-                        <p class="card-subtitle mb-2 text-muted card-subheader"><strong>
-                            User.name |
-                        </strong> 6K USERS</p>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-lg-4 mb-2 space-cards">
-                <div class="card card-style mx-auto">
-                    <img src="{{ MEDIA_URL }}heroimage.jpeg"
-                        class="card-img-top" alt="">
-                    <div class="card-body">
-                        <h6 class="card-title card-headertext">TheBloq Pride Block Party June Bank Holiday Weekend 2022
-                        </h6>
-                        <p class="text-color red"><small>Sat, Jun 30,15:00</small></p>
-                        <p class="card-subheader mb-2">Event Space TBA</p>
-                        <p class="text-color"><small>Starts at €24</small></p>
-                        <p class="card-subtitle mb-2 text-muted card-subheader"><strong>
-                            User.name |
-                        </strong> 6K USERS</p>
-                        </p>
-                    </div>
-                </div>
             </div>
         </div>
 

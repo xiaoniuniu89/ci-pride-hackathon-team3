@@ -1,6 +1,16 @@
+from datetime import datetime
 from django.shortcuts import render
+
+from event.models import Event
 
 # Create your views here.
 def index(request):
     """ A view to return the index page """
-    return render(request, 'home/index.html')
+    now = datetime.now()
+    date_today = now.date()
+    event = Event.objects.filter(date__lt=date_today).order_by('-date')[:3]
+
+    context = {
+        'event': event 
+    }
+    return render(request, 'home/index.html', context)

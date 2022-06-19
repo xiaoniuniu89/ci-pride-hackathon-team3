@@ -1,3 +1,4 @@
+from datetime import datetime
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.http import JsonResponse
 from django.views.generic import (
@@ -15,7 +16,9 @@ from .models import Event, Donation, Comment
 
 class EventListView(ListView):
     """ list view of all events """
-    queryset = Event.objects.all()
+    now = datetime.now()
+    date_today = now.date()
+    queryset = Event.objects.filter(date__gte=date_today)
     context_object_name = 'events'
 
 def eventDetail(request, slug):
@@ -104,4 +107,3 @@ def updateComment(request):
         comment.body = comment_body
         comment.save()
         return JsonResponse({'msg': 'Your comment was updated'})
-
