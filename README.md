@@ -278,7 +278,7 @@ uguhom;,
 
 ## Testing
 
-Please view our [TESTING.md](#testing) file for more information on the testing undertaken.
+Please view our [TESTING.md](testing.md) file for more information on the testing undertaken.
 
 
 ### Further Testing
@@ -357,6 +357,8 @@ By forking the GitHub Repository we make a copy of the original repository on ou
 -   Psychological properties of colours text in the README.md was found [here](http://www.colour-affects.co.uk/psychological-properties-of-colours)
 
 -   The full-screen hero image code came from this [StackOverflow post](https://stackoverflow.com)
+
+- The carousel images were sourced from [pexels](https://www.pexels.com/)
 
 -   [Bootstrap4](https://getbootstrap.com/docs/4.4/getting-started/introduction/): Bootstrap Library used throughout the project mainly to make site responsive using the Bootstrap Grid System.
 
