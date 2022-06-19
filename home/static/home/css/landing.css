@@ -162,8 +162,6 @@ color:black;
     box-shadow:0 0 1rem 0 grey;
 }
 
-
-
 /* for home page */
 @media only screen and (max-width: 768px) {
     .space-cards {
