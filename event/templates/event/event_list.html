@@ -1,37 +1,47 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% block extra_css %}
+<link rel='stylesheet' href="{% static 'event/css/event.css' %}" />
+{% endblock extra_css %}
 {% block content %}
 
     
-    <div class="container py-5">
+<div class="container py-5">
     
-     
-    {% for event in events %}
-    
-         <a href="{% url 'event_detail' event.slug %}">
-            <div class=" col-sm-6 col-md-4 space-cards">
-                <div class="card card-style mx-auto">
-                    <img src="{{event.featured_image.url}}"
-                        class="card-img-top" alt="">
-                       
-                    <div class="card-body">
-                        <h6 class="card-title card-headertext">{{event.name}}
-                        </h6>
-                        <p class="text-color red"><small>{{event.date}} - {{event.time}}</small></p>
-                        <p class="card-subheader mb-2">{{event.loacation}}</p>
-                        <p class="card-subtitle mb-2 text-muted card-subheader"><strong>
-                            {{event.organizer.username}} |
-                        </strong> (organiser)</p>
-                        </p>
-                    </div>
-                      
+    <div class="row">
+        <div class="event-container col-10 offset-1">
+                <div class="row event-row">
+                    {% for event in events %}
+                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                        <div class="card h-100 border-0 space-card">
+                            <a href="{% url 'event_detail' event.slug %}">
+                                <div class="space-cards mb-4">
+                                    <div class="card event-card card-style mx-auto">
+                                        <img src="{{event.featured_image.url}}"
+                                            class="card-img-top" alt="{{event.name}}">
+                                           
+                                        <div class="var">
+                                            <h6 class="card-title text-center card-headertext mb-3">{{event.name}}
+                                            </h6>
+                                            <hr class="purple mb-4">
+                                            <p class="text-color text-center red"><small>{{event.date}} - {{event.time}}</small></p>
+                                            <p class="card-subheader text-center mb-2">{{event.loacation}}</p>
+                                            <p class="card-subtitle mb-2 text-muted text-center card-subheader"><strong>
+                                                {{event.organizer.username}} |
+                                            </strong> (organiser)</p>
+                                            </p>
+                                        </div>
+                                          
+                                    </div>
+                                  
+                                    </div>
+                         </a>
+                        </div>
+                    </div>    
+                    {% endfor %}    
                 </div>
-              
-                </div>
-     </a>
-       
+        </div>
+    </div>
 
-    {% endfor %}
 </div>
 {% endblock content %}
