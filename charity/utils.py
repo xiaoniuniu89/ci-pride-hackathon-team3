@@ -8,8 +8,7 @@ def payment_confirmation(pk, amount):
     event = Event.objects.get(pk=pk)
     amount = amount // 100
     donation = Donation.objects.get(event=event)
-    print(donation)
-    donation.amount += amount
+    donation.total += amount
     donation.save()
     print('donation updated')
 
