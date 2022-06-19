@@ -37,10 +37,34 @@
                     <li class="ways-list">Transfer : We also take bank transfers from corporate and private individuals. Kindly Click <a href="{% url 'home' %}">Here</a> to make a transfer. </li>
 
                     <h4 class="donate-button">
-                        <a href="{% url 'make-donation' %}" class="donate-btn btn text-uppercase py-3">
+                        <a href="" class="donate-btn btn text-uppercase py-3">
                             DONATE
                         </a>
+                        <button data-bs-toggle="modal" data-bs-target="#donate-modal" type="button" id='donate-btn' value={{event.id}} class="btn btn-info btn-sm">Donate</button>
                     </h4>
+                    <!-- Modal -->
+                    <div class="modal fade" id="donate-modal" tabindex="-1" aria-labelledby="donate-modalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="donate-modalLabel">How much would you like to donate?</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <form action="{% url 'make_donation' event.pk %}" method='POST'>{% csrf_token %}
+                                <div class="modal-body">
+                                <div class="mb-3">
+                                <label for="eamount" class="form-label">Amount</label>
+                                <input name='amount' type="number" class="form-control" id="exampleFormControlInput1" placeholder="5">
+                                </div>
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Donate</button>
+                                </div>
+                            </form>
+                        </div>
+                        </div>
+                    </div>
                 </ol>
             </div>
         </div>
