@@ -33,7 +33,7 @@ def stripe_donation(request, pk):
                 'enabled': True,
             },
             # will use this later in webhook to update billing status
-            metadata={'event_id': pk}
+            metadata={'event_id': pk, 'user_id': request.user.pk}
         )
         print(f'{request.user} mad a donation of {amount} for {event.name}')
         return render(
@@ -62,7 +62,7 @@ def stripe_webhook(request):
 
     # Handle the event
     if event.type == 'payment_intent.succeeded':
-        payment_confirmation(event.data.object.metadata.event_id, event.data.object.amount)
+        payment_confirmation(event.data.object.metadata.event_id, event.data.object.metadata.user_id, event.data.object.amount)
 
     else:
         print(f'Unhandled event type {event.type}')
@@ -102,9 +102,6 @@ def makedonations(request):
 
 def donationmade(request):
     """ A view to thank users for donation """
-    event = get_object_or_404(Donations)
-    context = {
-        'event': event,
-    }
+   
     template = 'charity/success.html'
-    return render(request, template, context)
+    return render(request, template)

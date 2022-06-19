@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container col-4 mt-5">
+    <form method="POST">
+        <h1 class='heading'>Are you sure?</h1>
+        {% csrf_token %}
+        <a href="{% url 'profile' %}" class="btn btn-primary" >Cancel</a>
+            <button class="btn btn-danger" type="submit">Delete</button>
+            
+    </form>
+</div>
+{% endblock content %}

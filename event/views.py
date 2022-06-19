@@ -2,10 +2,13 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.http import JsonResponse
 from django.views.generic import (
     ListView,
-    UpdateView
+    UpdateView,
+    DeleteView
 )
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.decorators import login_required
 
 from .forms import EventForm, CommentForm
 from .models import Event, Donation, Comment
@@ -20,7 +23,7 @@ def eventDetail(request, slug):
     comments = Comment.objects.filter(event=event)
     return render(request, 'event/event_detail.html', {'event': event, 'comments': comments})
 
-
+@login_required
 def eventCreate(request):
     """create event view"""
 
@@ -45,7 +48,7 @@ def eventCreate(request):
 
     
 
-class EventUpdateView(SuccessMessageMixin, UpdateView):
+class EventUpdateView(UserPassesTestMixin, SuccessMessageMixin, UpdateView):
     """
     update event
     """
@@ -57,14 +60,24 @@ class EventUpdateView(SuccessMessageMixin, UpdateView):
     def get_success_url(self, **kwargs):
         slug = self.kwargs['slug']
         return reverse('event_detail', kwargs={'slug': slug})
+    
+    def test_func(self):
+        event = self.get_object()
+        if self.request.user == event.organizer:
+            return True
+        return False
 
-def eventDelete(request, pk):
+class EventDeleteView(UserPassesTestMixin, DeleteView):
     """ delete event """
-    if request.method=="POST":
-        event = Event.objects.get(pk=pk)
-        event.delete()
-        messages.success(request, 'deleted')
-        return redirect('event_list')
+    model = Event
+    success_url = '/profile/'
+    success_message = '''Event Deleted'''
+    
+    def test_func(self):
+        event = self.get_object()
+        if self.request.user == event.organizer:
+            return True
+        return False
 
 
 def createComment(request, pk):
