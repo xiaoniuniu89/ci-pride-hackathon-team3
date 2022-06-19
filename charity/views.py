@@ -102,6 +102,6 @@ def makedonations(request):
 
 def donationmade(request):
     """ A view to thank users for donation """
-   
+
     template = 'charity/success.html'
     return render(request, template)
