@@ -16,14 +16,14 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 if 'DEVELOPMENT' in os.environ:
     SITE_ID = 1
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-    DEBUG = True
+    # DEBUG = True
 else:
     SITE_ID = 2
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    DEBUG = False
+    # DEBUG = False
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
+DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1' , 'pride-hackathon-team3.herokuapp.com']
 
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'crispy_forms',
+    # 'storages',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -139,7 +140,6 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
-    os.path.join(BASE_DIR, 'media')
 ]
 
 MEDIA_URL = '/media/'
@@ -188,3 +188,15 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
+
+
+# # amazon aws settings
+# AWS_S3_REGION_NAME = 'eu-west-1'
+# AWS_S3_ADDRESSING_STYLE = 'virtual'
+# AWS_S3_SIGNATURE_VERSION = 's3v4'
+# AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+# AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+# AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+# AWS_FILE_OVERWRITE = False
+# AWS_DEFAULT_ACL = None
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
