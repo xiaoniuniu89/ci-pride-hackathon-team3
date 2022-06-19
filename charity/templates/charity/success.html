@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel='stylesheet' href="{% static 'charity/css/charity.css' %}" />
+{% endblock extra_css %}
+
+{% block page_header %}
+    <div class="header-container container-fluid">
+        <div class="row ">
+            <div class="col-sm-12 header-image">
+                <h2 class="hero-image-text"> BE AN ALLY </h2>
+                </p> 
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<section>
+    <div class="container sucess-container">
+        <div class="row">
+                <div class="col-12 col-md-6 donations-container">
+                    <div class="col-sm-12 text-center">
+                        <h3 class="support-us text-capitalize">Thank You {{user}}! for your € {{ event.amount}}! contribution</h3>
+                    </div>
+                </div>
+        </div>
+            
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h5 class="header-text"> Event: {{ event.event_name}} </h5>
+                <p class="support-text text-center">We appreciate your contribution, it helps us support all LGBTQ communities around the world.May your pockets never run dry.<br>
+                <strong><em>Thank you for being an ALLY .</em></strong> <strong><i class="fas fa-smile"></i></strong>. </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6 donations-container">
+                <div class="col-sm-12 text-center">
+                    <h6 class="donate-us">We at <strong class="text-black">{{event.charities }}</strong> appreciate your generosity and cannot thank you enough</h6>
+                </div>
+            </div>
+        </div>
+        <div class="submit-button text-center mt-5 mb-2">
+            <a href="{% url 'donate' %}" class="btn btn-black mb-2 rounded-0">
+                <span class="icon">
+                    <i class="fas fa-chevron-left"></i>
+                </span>
+                <span class="text-uppercase">RETURN BACK</span>
+            </a>
+        </div>
+            
+            
+    </div>
+
+</section>
+{% endblock %}
