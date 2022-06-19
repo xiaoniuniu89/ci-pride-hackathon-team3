@@ -136,10 +136,9 @@
 
 
 /* stripe payment */
-/* .StripeElement,
+.StripeElement,
 .stripe-style-input {
     box-sizing: border-box;
-    height: 40px;
     padding: 10px 12px;
     border: 1px solid transparent;
     border-radius: 0px;
@@ -162,8 +161,7 @@
 #payment-form .form-control,
 #card-element {
     color: #000;
-    border: 1px solid #545b62;
-} */
+} 
 
 
 .donation-form{
