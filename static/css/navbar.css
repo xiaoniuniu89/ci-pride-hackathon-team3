@@ -12,12 +12,18 @@
     height:5rem;
 }
 
-.navbar-brand{
-    font-weight:500;
-    font-size:1.7rem;
-    color:white;
-    letter-spacing: 3px;
-    padding:5px 2px 5px 4px;
+.rainbow-shadow {
+    text-shadow: -1px 1px var(--purple),
+    -2px 2px #f48fb1,
+    -4px 4px #7e57c2,
+    -6px 6px var(--blue),
+    -8px 8px var(--green),
+    -10px 10px var(--yellow),
+    -12px 12px var(--red);
+}
+
+.navbar-collapse {
+    z-index: 6;
 }
 
 .navbar-nav li {
@@ -42,6 +48,7 @@
 .navbar .navbar-toggler {
     border: 0;
 }
+
 
 
 #navbarSupportedContent{

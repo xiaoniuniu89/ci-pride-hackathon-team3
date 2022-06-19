@@ -53,3 +53,13 @@ text-decoration: none;
 .general:hover {
 color: black;
 }
+
+.rainbow-shadow {
+    text-shadow: -1px 1px var(--purple),
+    -2px 2px #f48fb1,
+    -4px 4px #7e57c2,
+    -6px 6px var(--blue),
+    -8px 8px var(--green),
+    -10px 10px var(--yellow),
+    -12px 12px var(--red);
+}
