@@ -194,6 +194,11 @@ color:black;
     height: 2px;
 }
 
+.donate-button{
+    padding-bottom:2rem;
+    padding-top:1rem;
+}
+
 /* for home page */
 @media only screen and (max-width: 768px) {
     .space-cards {
