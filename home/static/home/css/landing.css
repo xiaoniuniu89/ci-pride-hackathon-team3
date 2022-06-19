@@ -2,7 +2,7 @@
 .header-text {
     text-align: center;
     line-height: 2rem;
-    color: var(--red)
+    color: var(--orange)
 }
 
 /* your CSS goes here*/
@@ -94,7 +94,7 @@
 }
 
 .services .serv h5 {color: var(--brown);}
-.services .serv p {color: var(--red)}
+.services .serv p {color: var(--orange)}
 .services .serv hr {
     width: 30px;
     border-top: 3px solid rgb(0 169 211);
@@ -134,6 +134,32 @@ color:black;
 
 .view-btn:hover{
     border:1px solid grey;
+}
+
+.support-header{
+    font-size:2rem;
+    padding:2rem 0;
+    color:var(--brown);
+}
+
+.brown{
+    color:var(--brown);
+}
+
+.charity-list{
+    padding-top: 2rem;
+    color: var(--brown);
+}
+
+.btn-black{
+    border: 1px solid grey;
+    background-color: var(--blue);
+    color: white;
+}
+
+.btn-black:hover{
+    cursor:pointer;
+    box-shadow:0 0 1rem 0 grey;
 }
 
 
