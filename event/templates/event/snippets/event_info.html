@@ -28,7 +28,7 @@
                                 <button type="button" id='volunteer-btn' value={{event.id}} class="btn btn-success btn-sm">Volunteer</button>
                                 {% if request.user == event.organizer %}
                                 <a type="button" href="{% url 'event_update' event.slug %}" class="btn btn-info btn-sm">Update</a>
-                                <a type="button" href="{% url 'event_delete' event.pk %}" class="btn btn-danger btn-sm">Delete</a>
+                                <button data-bs-toggle="modal" data-bs-target="#delete-event-modal" type="button" class="btn btn-danger btn-sm">Delete</button>
                                 {% endif %}
                         </div>
                     </div>

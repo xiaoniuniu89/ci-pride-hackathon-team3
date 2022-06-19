@@ -1,0 +1,45 @@
+
+<div class="modal fade" data-pk='{{event.pk}}' id="delete-event-modal" tabindex="-1" aria-labelledby="delete-modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="delete-modal-Label">Delete Event</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure? Any money raised for this event will be donated to {{event.charity}}.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" id="confitm-delete-event-btn" class="btn btn-primary">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    const profileUrl = {% url 'profile' %}
+
+    // ajax call to delete comment
+    $(document).on('click', '#confitm-delete-event-btn', function(e){
+      document.querySelector('#confitm-delete-event-btn').setAttribute('disabled', true)
+        $.ajax({
+        type: 'POST',
+        url: '{% url "event_delete" %}',
+        data: {
+            event_pk: $("#delete-event-modal").attr('data-pk'),
+            csrfmiddlewaretoken: "{{csrf_token}}",
+            action: 'delete-event'
+        },
+        success: function(json){
+        alert(json.msg)
+          window.location.replace(profileUrl)
+           console.log('worked')
+        },
+        error: function(xhr, errmsg, err){}
+    }); 
+        
+        
+  });
+    
+</script> 

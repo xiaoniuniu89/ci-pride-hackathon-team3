@@ -70,18 +70,12 @@ class EventUpdateView(UserPassesTestMixin, SuccessMessageMixin, UpdateView):
             return True
         return False
 
-class EventDeleteView(UserPassesTestMixin, DeleteView):
-    """ delete event """
-    model = Event
-    success_url = '/profile/'
-    success_message = '''Event Deleted'''
-    
-    def test_func(self):
-        event = self.get_object()
-        if self.request.user == event.organizer:
-            return True
-        return False
-
+def deleteEvent(request):
+    if request.POST.get('action') == 'delete-event':
+        event_pk = request.POST.get('event_pk')
+        event = Event.objects.get(pk=event_pk)
+        event.delete()
+        return JsonResponse({'msg': 'Your event was deleted'})
 
 def createComment(request, pk):
     if request.method == 'POST':
@@ -97,7 +91,6 @@ def deleteComment(request):
         comment = Comment.objects.get(pk=comment_pk)
         comment.delete()
         return JsonResponse({'msg': 'Your comment was deleted'})
-
 
 def updateComment(request):
     if request.POST.get('action') == 'update':
