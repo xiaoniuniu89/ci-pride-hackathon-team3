@@ -16,6 +16,7 @@ from .models import Event, Donation, Comment
 
 class EventListView(ListView):
     """ list view of all events """
+    paginate_by = 8
     now = datetime.now()
     date_today = now.date()
     queryset = Event.objects.filter(date__gte=date_today)
