@@ -7,30 +7,62 @@
 
 {% block content %}
 <section>
-    <div class="container">
+    
+    <div class="container-fluid">
         <div class="row ">
             <div class="col-12 col-md-6 donations-container">
                 <div class="col-sm-12 text-center">
-                    <h3 class="ways-header">WAYS YOU CAN DONATE</h3>
+                    <h3 class="support-us">THANK YOU FOR SUPPORTING US!!</h3>
                 </div>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-12 col-md-6 donations-container text-black">
-                <form method="POST" action="{% url 'make-donation' %}" class="form mb-2 text-black" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    {{ form }}
-                    <div class="text-center pt-4 pb-4">
-                        <a class="btn btn-outline-black text-uppercase" href="{% url 'home' %}">Cancel</a>
-                        <button class="btn donate-btn text-uppercase" type="submit">MAKE DONATION</button>
+            <div class="col-12 col-lg-6 donations-container">
+                <form class="row donation-form mb-2" method="POST"  action="{% url 'make-donation' %}" id="payment-form" enctype="multipart/form-data">
+                    <div class="card-panel">
+                        {% csrf_token %}
+                        <fieldset class="rounded px-3 mb-5">
+                            <legend class="fieldset-label lead color-pink text-black px-2 w-auto">Delivery</legend>
+                            {{ form.email| as_crispy_field }}
+                            {{ form.event_name | as_crispy_field }}
+                            {{ form.charities | as_crispy_field }}
+                            {{ form.amount | as_crispy_field }}
+                        </fieldset>
+                
+                        <!--User's payment information-->
+                        <fieldset class="px-3">
+                            <legend class="fieldset-label small text-black px-2 w-auto">Payment Details</legend>
+                            <!-- The Stripe card element -->
+                            <div class="mb-3" id="card-element"></div>
+
+                            <!-- display form errors -->
+                            <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+
+                            <!-- Pass the client secret to the view so we can get the payment intent id -->
+                            <input type="hidden" value="{{ client_secret }}" name="client_secret">
+                        </fieldset>
+
+                        <div class="submit-button text-center mt-5 mb-2">
+                            <a href="{% url 'donate' %}" class="btn btn-black mb-2 rounded-0">
+                                <span class="icon">
+                                    <i class="fas fa-chevron-left"></i>
+                                </span>
+                                <span class="text-uppercase">CANCEL</span>
+                            </a>
+                            <button id="submit-button" class="btn btn-black mb-2 rounded-0">
+                                <span class="text-uppercase">COMPLETE PAYMENT</span>
+                                <span class="icon">
+                                    <i class="fas fa-lock"></i>
+                                </span>
+                            </button>
+                        </div>
                     </div>
-                </form>
-            </div>            
+                </form>          
+            </div>
         </div>
     </div>
 </section>
-    
 {% endblock %}
 
 {% block postloadjs %}
