@@ -6,10 +6,10 @@ class DonationForm(forms.ModelForm):
     """ Form to allow users to add donations """
     class Meta:
         model = Donations
-        fields = ('email', 'event_name', 'amount', 'charities')
+        fields = '__all__'
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields['charities'].label = "Select a charity for your choice"
-        for field_name, field in self.fields.items():
-            field.widget.attrs['class'] = 'border-grey rounded-0',
+    # def __init__(self, *args, **kwargs):
+    #     super().__init__(*args, **kwargs)
+    #     self.fields['charities'].label = "Select a charity for your choice"
+    #     for field_name, field in self.fields.items():
+    #         field.widget.attrs['class'] = 'border-grey rounded-0',

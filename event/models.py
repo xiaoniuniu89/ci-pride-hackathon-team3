@@ -9,6 +9,18 @@ import uuid
 class Event(models.Model):
     """Model for events"""
 
+    ConsentWorkshop = 'Consent Workshop'
+    OutrightInternational = 'Outright International'
+    GlobalGiving = 'GlobalGiving'
+    MicroRainbow = 'MicroRainbow'
+    SELECT = [
+        (ConsentWorkshop, 'Consent Workshop'),
+        (OutrightInternational, 'Outright International'),
+        (GlobalGiving, 'Global Giving'),
+        (MicroRainbow, 'Micro Rainbow'),
+    ]
+    
+    charities = models.CharField(choices=SELECT, max_length=22)
     name = models.CharField(max_length=50)
     featured_image = models.ImageField(default='default.jpg', upload_to='media')
     description = models.TextField()
@@ -34,7 +46,7 @@ class Event(models.Model):
 class Donation(models.Model):
     """model for donation"""
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
-    total = models.DecimalField(max_digits=4, decimal_places=2, default=0)
+    total = models.DecimalField(max_digits=20, decimal_places=2, default=0)
 
     def __str__(self):
         return f'Donation for {self.event.name}'

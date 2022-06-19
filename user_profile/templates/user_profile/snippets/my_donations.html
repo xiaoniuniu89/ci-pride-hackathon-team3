@@ -1,0 +1,19 @@
+<div class="row wrap-land clearfix library-wrapper content-div" id='donations-div'>
+            
+    {% if donations %}
+    {% for donation in donations  %}
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 py-5">
+        <a href="" target="_blank">
+            <div class=" ">
+            </div>
+        </a>
+        <div class='d-flex justify-content-center pt-2'>
+            
+        </div>
+        </div>
+    {% endfor %}
+    {% else %}
+     <div class="container d-flex justify-content-center mt-5"><a class='btn btn-info text-center' href="{% url 'event_list' %}">Find an event to donate to!</a></div>
+    {% endif %}
+
+</div>

@@ -1,1 +1,50 @@
-hello {{profile.user.username}}
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_css %}
+    <link rel='stylesheet' href="{% static 'user_profile/css/user_profile.css' %}" />
+{% endblock %}
+
+{% block content %}
+
+  <main class="container">
+
+    <div class="pt-5">
+      <div class="row mb-2">
+        <h1>Welcome {{user.username}}</h1>
+        <a href="{% url 'event_create' %}" class="btn btn-primary">New Event</a>
+          
+        
+      </div>
+      <div class="row mb-2">
+        <p class="lead">You can access your events and donation history here.</p>
+      </div>
+    </div>
+
+  </main>
+
+
+  
+<div class="container dash-wrapper">
+
+  <ul  class="nav nav-tabs">
+    <li class="nav-item">
+      <span id="donations" class="nav-link active">My Donations</span>
+    </li>
+    <li class="nav-item">
+      <span class="nav-link" id="events">My Events</span>
+    </li>
+  </ul>
+
+
+    <div class="dash-tab-content-wrapper">
+      {% include 'user_profile/snippets/my_donations.html'%}
+      {% include 'user_profile/snippets/my_events.html'%}
+    </div>
+
+</div>
+
+{% comment %} {% include 'dashboard/snippets/billing_modal.html'%} {% endcomment %}
+
+<script src="{% static 'user_profile/js/user_profile.js' %}"></script>
+
+{% endblock %}
