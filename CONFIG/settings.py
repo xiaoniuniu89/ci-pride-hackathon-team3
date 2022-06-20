@@ -16,14 +16,14 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 if 'DEVELOPMENT' in os.environ:
     SITE_ID = 1
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-    # DEBUG = True
+    DEBUG = True
 else:
     SITE_ID = 2
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    # DEBUG = False
+    DEBUG = False
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1' , 'pride-hackathon-team3.herokuapp.com']
 
