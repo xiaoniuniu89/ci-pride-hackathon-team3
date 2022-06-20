@@ -8,7 +8,7 @@ def index(request):
     """ A view to return the index page """
     now = datetime.now()
     date_today = now.date()
-    event = Event.objects.filter(date__lt=date_today).order_by('-date')[:3]
+    event = Event.objects.all().order_by('-date')[:3]
 
     context = {
         'event': event 
