@@ -17,8 +17,7 @@
 
 3. [Further Testing](#further-testing)
 
-4. [Solved Bugs](#solved-bugs)
-   - [Unresolved Bug](#unresolved-bug)   
+4. [Unresolved Bug](#unresolved-bug)   
 
 <br/>
 
@@ -97,6 +96,7 @@ Some feedbacks were provided.
 <br/>
 
 
-### **SOLVED BUGS**
+### **UNRESOLVED SOLVED BUGS**
 
-1.
+1.Unfortunately, due to time constraints, we were unable to resolve a server issue that occurred during deployment when we set the debug setting in our settings.py file to false. This could be related to the fact that images uploaded to the site were not showing up until the last minute, prompting us to switch to an AWS bucket to host our images.
+Even with the AWS bucket, we were unable to resolve the server error, but we discovered a workaround by setting the debug to true. We are aware that this is not a good practice, but due to time constraints, we needed to demonstrate a functional website. 

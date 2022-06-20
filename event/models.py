@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 import uuid
+from PIL import Image
 # real time chat
 # contacting the organizer - inbox for the event / group chat for volunteers  - users have an inbox
 # comments
@@ -41,6 +42,17 @@ class Event(models.Model):
         """ method to return donation total"""
         donation = Donation.objects.get(event_id=self.id)
         return donation.total
+    
+    def save(self, *args, **kwargs):
+        ## rescale images when uploaded 
+        super().save(*args, **kwargs)
+
+        img = Image.open(self.image.path)
+        if img.height > 500 or img.width > 500:
+            output_size = (500, 500)
+            img.thumbnail(output_size)
+            img.save(self.image.path)
+
 
 class VolunteerList(models.Model):
     volunteers = models.ManyToManyField(User)
