@@ -73,10 +73,8 @@ def stripe_webhook(request):
 def donate(request):
     """ A view to return the donation page """
     template = 'charity/donate.html'
-    context = {
-        'event': event,
-    }
-    return render(request, template, context)
+    
+    return render(request, template)
 
 
 def makedonations(request):
