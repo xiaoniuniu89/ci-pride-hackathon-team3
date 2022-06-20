@@ -484,7 +484,9 @@ Amazon web services s3 is a cloud-based storage service where we would store our
 
 "_Participating in the June 2022 Hackathon organized by Code Institute was an incredible experience. Thank you for this wonderful opportunity; the last few days have been amazing; I got to work with and learn from talented individuals, build my network skills, improve my collaborative skills, and have fun with my new friends while working on our exciting project. I'm looking forward to participating in many more hackathons in the future._"
 
-* Daniel  [LinkedIn]() | [Github](https://github.com/xiaoniuniu89)
+* Daniel  [LinkedIn](https://www.linkedin.com/in/danielcallaghan89/) | [Github](https://github.com/xiaoniuniu89)
+
+"A great experience. Put together an amazing build in a short time. First time working with these coders and I had a great time coding this site with them."
 
 
 * Felix [LinkedIn]() | [Github](https://github.com/Felix-Voyle)
