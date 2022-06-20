@@ -34,7 +34,7 @@ Due to time we were unable to carry out test for some of the pages,only a few.
 * [Sign Up Page W3C HTML Validation]() Pass
 * [Login Page W3C HTML Validation]()
 * [Donate W3C HTML Validation]() - Pass
-* [Event detail W3C HTML Validation](documentation/testing/privacy-validation.png) - Pass
+* [Event detail W3C HTML Validation]() - Pass
 <br/>
 
 #### **CSS**
