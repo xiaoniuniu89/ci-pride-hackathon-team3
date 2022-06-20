@@ -43,15 +43,15 @@ class Event(models.Model):
         donation = Donation.objects.get(event_id=self.id)
         return donation.total
     
-    # def save(self, *args, **kwargs):
-    #     ## rescale images when uploaded 
-    #     super().save(*args, **kwargs)
+    def save(self, *args, **kwargs):
+        ## rescale images when uploaded 
+        super().save(*args, **kwargs)
 
-    #     img = Image.open(self.featured_image.path)
-    #     if img.height > 500 or img.width > 500:
-    #         output_size = (500, 500)
-    #         img.thumbnail(output_size)
-    #         img.save(self.featured_image.path)
+        img = Image.open(self.featured_image.path)
+        if img.height > 500 or img.width > 500:
+            output_size = (500, 500)
+            img.thumbnail(output_size)
+            img.save(self.featured_image.path)
 
 
 class VolunteerList(models.Model):
