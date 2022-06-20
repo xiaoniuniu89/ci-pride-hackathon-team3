@@ -57,22 +57,6 @@ Bring Us Together is a open network where users can create support and contribut
     * [Team Members](#team-members)
 
 
--   ### Design
-    -   #### Colour Scheme
-        The colour scheme of the site is a mix of rainbow colours which signify diversity while encouraging togetherness. A strong symbol of the LGBTQ+ community;
-                
-        - #A64E77 
-        - #033EBC
-        - #F2E205
-        - #BF5B04
-        - #D91604
-
-    -   #### Typography
-        -   The Montserrat font is the main font used throughout the whole website with Sans Serif as the fallback font in case for any reason the font isn't being imported into the site correctly. Montserrat is a clean font used frequently in programming, so it is both attractive and appropriate.
-    -   #### Imagery
-        -   Imagery is important. The large, background hero image is designed to be striking and catch the user's attention. It also has a modern, energetic aesthetic.
-
-
 ## **UX Development**
 ### **PROJECT GOAL**
 
@@ -98,38 +82,34 @@ GOAL OF PROJECT
 * As a Frequent User, I want to be able to not only donate money but my own time, to causes I am passionate about.
 
 ### **Target Audience**
+* LGBTQ indivual who are looking to create events/ attend events to connect with new people.
 
-Audience 
-## **Design**
+* Individuals looking to support / make an impact in the LGBTQ community. 
 
+* Individuals who want to learn and support the LGBTQ community.
+## **DESIGN**
 ### **Colour Scheme**
+The colours used in the design of US Together were obtained from the [Adobe Color website](https://color.adobe.com/). The colours were inspired by a mix of rainbow colours which signify diversity while encouraging togetherness. A strong symbol of the LGBTQ+ community in order to build trust with our brand and stimulate their curiosity by using aesthetically pleasing images that catch our users' attention and provide a welcoming safe haven.
 
-Colors have a significant effect on our mood, through them,
-
-![The color scheme](  "The color Pallete") 
-
+![The color scheme](readme-files/read-me/color-pallete.png "The color Pallete")  
 ### **Typography**
+The [Google Fonts](https://fonts.google.com) Roboto and Montserrat font were chosen for their bold and clean nature to give the site a friendly clean minimalist design. A backup font has also been included sans-serif.
 
-
-![Quicksand Font](documentation/font_quicksand.png)
-
+### **Imagery**
+Imagery is important. The large, background hero image is designed to be striking and catch the user's attention. It also has a modern, energetic aesthetic.
 ### **Wireframes**
 
 The entire site's wireframe was done using [Figma](https://www.figma.com) & Balmasiq.This depicts the site on a desktop and a mobile device.
 
-![Wireframe for HomePage]()
-![Wireframe for Event page ]()
-![Wireframe for Donation page ]()
-![Wireframe for Single Event page ]()
-![Wireframe for Login page ]()
-![Wireframe for Log Out page ]()
-![Wireframe for Profile page ]()
-![Wireframe for Sign Up page ]()
+![Wireframe for Home Page](readme-files/read-me/wireframes/homepage.png) 
+![Wireframe for Event Page](readme-files/read-me/wireframes/events-page.png)   
+![Wireframe for Event Detail Page](readme-files/read-me/wireframes/event-detail.png)
+![Wireframe for Donation Page](readme-files/read-me/wireframes/donationpage.png)    
+![Wireframe for Login Page](readme-files/read-me/wireframes/loginpage.png)
 
 ### **Database Structure**
 
 [Diagram.io](https://dbdiagram.io/home) was used to create the data schema for this project. Our schema had three collections:
-
 
 ![Database structure](documentation/database-schema.png)  
 
@@ -137,34 +117,32 @@ The entire site's wireframe was done using [Figma](https://www.figma.com) & Balm
 
 ### **General Features On All Pages**
 
-The site has been designed to be fully responsive, from mobile all the way up to desktop.
+The site has been designed to be fully responsive, across all devices and has been designed to be user-friendly and intuitive.
 
 **Navbar**
 
-The site has a fully responsive navbar.
+The site has a fully responsive navbar on all pages .
 
-![Navbar desktop](documentation/navbar-desktop.png)
-![Navbar Small Screens](documentation/navbar-small.png)
+![Navbar desktop](readme-files/read-me/nav-desktop.png)
+![Navbar on Small Devices](readme-files/read-me/mobile-navbar.png)
 
 **Footer**
 
-The site has a fully responsive footer. The footer contains links to social media, the privacy policy and terms and conditions pages. It also features a call to action button asking users to join now.
+This contains US Together social media accounts, where users may discover more about them and create trust with the brand. It also provides conatct details of the business and it's Terms of service.
 
-![Footer Large](documentation/footer-large.png)
-![Footer Small](documentation/footer-small.png)
+![Footer Large  Screen](readme-files/read-me/footer-desktop.png)
+![Footer Small screen](readme-files/read-me/footer-mobile.png)
 
 **Favicon**
 
-The Favicon was created using [Favicon.io](https://favicon.io/).
-We have chosen this image as our site logo and have also used it as our favicon as it brings brand cohesion to the site.
+The Favicon was created using [Favicon.io](https://favicon.io/).We chose the hero image as our favicon as it brings brand cohesion to the site.
 
-![Favicon](documentation/rm-favicon.png)
-
-**Site Logo**
-uguhom;,
+**Modal**
+On some sites, a modal appears to allow the user to conduct basic operations such as adding events, making donations and deleting events. 
 
 ### **FEATURES TO IMPLEMENT IN FUTURE**  
 
+*  **Privacy, Terms and Condition Page** : Provides the users with explicit details about our wesbite , how our data is collected and how we protect their data. 
 
 <br/>   
   
@@ -185,53 +163,13 @@ uguhom;,
 
    * [Fontawesome](https://fontawesome.com/) : This was used to convey information using icons and to improve the site's appearance.
 
-   * [Google Fonts](https://fonts.google.com/) : For this project's design, the fonts Belleza and Source Sans Pro have been imported into the stylesheet.
+   * [Google Fonts](https://fonts.google.com/) : For this project's design, the fonts Roboto and Source Sans Pro have been imported into the stylesheet.
 
    * [GITHUB](https://github.com/) : This was the location of the project's code.
 
 ### **PACKAGES/ DEPENDENCIES INSTALLED** 
 
    * [Django Allauth](https://django-allauth.readthedocs.io/en/latest/) : This was used to verify users' identities, register them, and manage their accounts.  
-
-   * [Django Crispy Form](https://django-crispy-forms.readthedocs.io/en/latest/) : This was used to manage forms on the website, allowing us to modify their properties.
-
-    1. As a First Time Visitor, I want to instantly understand the site's purpose.
-
-        1. Upon entering the site, users are automatically greeted with a clean and easily readable navigation bar to go to the page of their choice. Underneath there is a Hero Image with Text and a "Learn More" Call to action button.
-
-    2. As a First Time Visitor, I want to be able to navigate throughout the site seamlessly.
-
-        1. The site has been designed to be fluid and never to entrap the user. At the top of each page there is a clean navigation bar, each link describes what the page they will end up at clearly.
-
-    3. As a First Time Visitor, I want donating to a given given event/charity to be clear and easy to do.
-        1. Once the new visitor has read the About Us and What We Do text, they will notice the Why We are Loved So Much section.
-
-    4. As a First Time Visitor, I want to see examples of past / successful events.
-        1. 
-    
-    5. As a First Time Visitor, I want to be able to understand the positive role the site plays.
-        1.     
-
--   #### Returning Visitor Goals
-
-    1. As a Returning Visitor, I want to connect to like minded people / organisations.
-
-
-    2. As a Returning Visitor, I want to organise my own event.
-        
-
-    3. As a Returning Vistior, I want to be able to sign up / register and have a clear path to do so.
-        
-
--   #### Frequent User Goals
-    1. As a Frequent User, I want to be able to follow and stay updated on events / causes that I'm interested in.
-    
-    2. As a Frequent User, I want to check to see if there are any new events I haven't seen previously.
-    
-    3. As a Frequent User, I want to be able to have an overview of my own organised events.
-    
-    4. As a Frequent User, I want to be able to not only donate money but my own time, to causes I am passionate about.
-
 
    * [Gunicorn](https://gunicorn.org/) : This is an HTTP server for WSGI applications that will be used to aid in the deployment of the project.
 
@@ -369,8 +307,6 @@ All images were obtained from
 ## **Acknowledgements**
 
 * Thank you to Code Institute for putting together this hackathon - we have had an amazing time taking part.
-* A huge thank you to our families for once again putting up with us disappearing for another weeekend filled with hackathon fun.
-
 ## **Team Members**
 
 * Name  [LinkedIn]() | [Github]()
