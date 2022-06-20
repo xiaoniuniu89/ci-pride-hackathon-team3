@@ -242,3 +242,8 @@ Some feedbacks were provided.
 ### **SOLVED BUGS**
 
 1.
+
+
+### **UNRESOLVED BUGS**
+
+1. The site was deployed early but due to human oversite, we did not check abut uploading image files until the end. Therefore there are bugs regarding images. There is no cloud provider set up and as Heroku doesn't allow serving images directly we used whitenoise. Whitenoise unfortunitally is proving to be difficult to work with in regards to images. Users, on creating an event, can not upload an image. they can update the event and add image then. Also if site is inactive too long these images will be deleted. An unfortunate bug in an otherwise great site. We would definitally address this for the next build.
