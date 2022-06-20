@@ -58,3 +58,33 @@ footer {
     width: 300px;
     right: 50px; top: 100px;
 }
+
+.btn-black{
+    border: 1px solid grey;
+    background-color: var(--blue);
+    color: white;
+}
+
+.btn-black:hover{
+    cursor:pointer;
+    box-shadow:0 0 1rem 0 grey;
+}
+
+.auth-container {
+    padding: 2rem 0 ;
+    color:var(--orange);
+    text-align: center;
+    margin-top: 7rem;
+    margin-bottom: 10rem;
+}
+
+.brown{
+    color:var(--brown)
+}
+
+@media (min-width: 992px) {
+     
+    .auth-container {
+        padding-top: 52px;
+    }
+}
