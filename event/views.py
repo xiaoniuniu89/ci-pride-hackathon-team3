@@ -12,14 +12,14 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.decorators import login_required
 
 from .forms import EventForm, CommentForm
-from .models import Event, Donation, Comment
+from .models import Event, Donation, Comment, VolunteerList
 
 class EventListView(ListView):
     """ list view of all events """
     paginate_by = 8
     now = datetime.now()
     date_today = now.date()
-    queryset = Event.objects.filter(date__gte=date_today)
+    queryset = Event.objects.filter(date__gte=date_today).order_by('-created')
     context_object_name = 'events'
 
 def eventDetail(request, slug):
@@ -41,7 +41,7 @@ def eventCreate(request):
             event.save()
             Donation.objects.create(event=event)
             messages.success(request, f'created')
-           
+            VolunteerList.objects.create(event=event)
             return redirect('event_list')
 
     else:
@@ -101,3 +101,12 @@ def updateComment(request):
         comment.body = comment_body
         comment.save()
         return JsonResponse({'msg': 'Your comment was updated'})
+
+def volunteer(request):
+
+    if request.POST.get('action') == 'volunteer':
+        event_pk = request.POST.get('event_pk')
+        event = Event.objects.get(pk=event_pk)
+        vl = VolunteerList.objects.get(event=event)
+        vl.volunteers.add(request.user.id)
+        return JsonResponse({'msg': 'You were added to the list of volunteers'})

@@ -1,0 +1,45 @@
+
+<div class="modal fade" data-pk='{{event.pk}}' id="volunteer-modal" tabindex="-1" aria-labelledby="delete-modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="delete-modal-Label">Delete Event</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to volunteer for {{event.name}}?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" id="confirm-volunteer-btn" class="btn btn-primary">I'm Sure!</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  
+
+ 
+    $(document).on('click', '#confirm-volunteer-btn', function(e){
+      document.querySelector('#confirm-volunteer-btn').setAttribute('disabled', true)
+        $.ajax({
+        type: 'POST',
+        url: '{% url "volunteer" %}',
+        data: {
+            event_pk: $("#volunteer-modal").attr('data-pk'),
+            csrfmiddlewaretoken: "{{csrf_token}}",
+            action: 'volunteer'
+        },
+        success: function(json){
+        alert(json.msg)
+          window.location.replace(window.location.href)
+           console.log('worked')
+        },
+        error: function(xhr, errmsg, err){}
+    }); 
+        
+        
+  });
+    
+</script> 
