@@ -15,8 +15,9 @@ from .utils import payment_confirmation
 from event.models import Event
 import stripe
 import json
-import os 
+import os
 stripe.api_key = os.environ.get('STRIPE_SECRET_KEY')
+
 
 @login_required
 def stripe_donation(request, pk):
@@ -36,9 +37,8 @@ def stripe_donation(request, pk):
             metadata={'event_id': pk, 'user_id': request.user.pk}
         )
         print(f'{request.user} mad a donation of {amount} for {event.name}')
-        return render(
-        request,
-        'charity/donate.html',
+        return render(request,
+            'charity/donate.html',
         {
             'client_secret': intent.client_secret,
             'intent': intent,
@@ -74,12 +74,11 @@ def donate(request):
     """ A view to return the donation page """
     template = 'charity/charity.html'
     context = {
-        'mr' : Event.objects.get(pk=48),
-        'gl' : Event.objects.get(pk=47),
-        'oi' : Event.objects.get(pk=46),
-        'cw' : Event.objects.get(pk=45)
+        'mr': Event.objects.get(pk=48),
+        'gl': Event.objects.get(pk=47),
+        'oi': Event.objects.get(pk=46),
+        'cw': Event.objects.get(pk=45)
     }
-    
     return render(request, template, context)
 
 

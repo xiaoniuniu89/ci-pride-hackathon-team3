@@ -17,8 +17,7 @@
 
 3. [Further Testing](#further-testing)
 
-4. [Solved Bugs](#solved-bugs)
-   - [Unresolved Bug](#unresolved-bug)   
+4. [Unresolved Bug](#unresolved-bug)   
 
 <br/>
 
@@ -52,8 +51,8 @@ Due to time we were unable to carry out test for some of the pages,only a few.
 <br/>
 
 #### **PYTHON**
-* [Pep8 Online validator](http://pep8online.com/): This was used to run our Python code to ensure that all errors, such as trailing whitespace, were removed. When this was run through the validator, it was discovered that some whitespaces were present and that some variables had been flagged.This was fixed and re-ran the code was free from errors. 
-X
+* [Pep8 Online validator](http://pep8online.com/): This was used to run our Python code to ensure that all errors, such as trailing whitespace, were removed. When this was run through the validator, it was discovered that some whitespaces were present and that some variables had been flagged.This was fixed for some pages and others left due to time constraints. 
+
 
 <br/>
 
@@ -97,11 +96,7 @@ Some feedbacks were provided.
 <br/>
 
 
-### **SOLVED BUGS**
+### **UNRESOLVED SOLVED BUGS**
 
-1.
-
-
-### **UNRESOLVED BUGS**
-
-1. The site was deployed early but due to human oversite, we did not check abut uploading image files until the end. Therefore there are bugs regarding images. There is no cloud provider set up and as Heroku doesn't allow serving images directly we used whitenoise. Whitenoise unfortunitally is proving to be difficult to work with in regards to images. Users, on creating an event, can not upload an image. they can update the event and add image then. Also if site is inactive too long these images will be deleted. An unfortunate bug in an otherwise great site. We would definitally address this for the next build.
+1.Unfortunately, due to time constraints, we were unable to resolve a server issue that occurred during deployment when we set the debug setting in our settings.py file to false. This could be related to the fact that images uploaded to the site were not showing up until the last minute, prompting us to switch to an AWS bucket to host our images.
+Even with the AWS bucket, we were unable to resolve the server error, but we discovered a workaround by setting the debug to true. We are aware that this is not a good practice, but due to time constraints, we needed to demonstrate a functional website.  

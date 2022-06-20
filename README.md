@@ -2,7 +2,7 @@
 
 [View the live project here.](https://pride-hackathon-team3.herokuapp.com/)
 
-Bring Us Together is a open network where users can create support and contribute to fully inclusive events. Not only by donating to causes which are close to home but also providing a platform to volunteer time and effort to bring about the social change users feel strongly about. 
+Bring Us Together is an open network where users can create, support and contribute to fully inclusive events. Not only by donating to causes which are close to home but also providing a platform to volunteer time and effort to bring about the social change users feel strongly about. 
 
 
 [View deployed site]()
