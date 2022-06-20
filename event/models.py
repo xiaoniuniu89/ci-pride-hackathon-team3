@@ -47,11 +47,11 @@ class Event(models.Model):
         ## rescale images when uploaded 
         super().save(*args, **kwargs)
 
-        img = Image.open(self.image.path)
+        img = Image.open(self.featured_image.path)
         if img.height > 500 or img.width > 500:
             output_size = (500, 500)
             img.thumbnail(output_size)
-            img.save(self.image.path)
+            img.save(self.featured_image.path)
 
 
 class VolunteerList(models.Model):
