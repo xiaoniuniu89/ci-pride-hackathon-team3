@@ -101,11 +101,11 @@ Imagery is important. The large, background hero image is designed to be strikin
 
 The entire site's wireframe was done using [Figma](https://www.figma.com) & Balmasiq.This depicts the site on a desktop and a mobile device.
 
-* [Wireframe for Home Page](readme-files/read-me/wireframes/homepage.png) 
-* [Wireframe for Event Page](readme-files/read-me/wireframes/events-page.png)   
-* [Wireframe for Event Detail Page](readme-files/read-me/wireframes/event-detail.png)
-* [Wireframe for Donation Page](readme-files/read-me/wireframes/donationpage.png)    
-* [Wireframe for Login Page](readme-files/read-me/wireframes/loginpage.png)
+![Wireframe for Home Page](readme-files/read-me/wireframes/homepage.png) 
+![Wireframe for Event Page](readme-files/read-me/wireframes/events-page.png)   
+![Wireframe for Event Detail Page](readme-files/read-me/wireframes/event-detail.png)
+![Wireframe for Donation Page](readme-files/read-me/wireframes/donationpage.png)    
+![Wireframe for Login Page](readme-files/read-me/wireframes/loginpage.png)
 
 ### **Database Structure**
 
