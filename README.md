@@ -1,6 +1,6 @@
 <h1 align="center">Bring Us Together</h1>
 
-[View the live project here.]()
+[View the live project here.](https://pride-hackathon-team3.herokuapp.com/)
 
 Bring Us Together is a open network where users can create support and contribute to fully inclusive events. Not only by donating to causes which are close to home but also providing a platform to volunteer time and effort to bring about the social change users feel strongly about. 
 
@@ -111,10 +111,9 @@ The entire site's wireframe was done using [Figma](https://www.figma.com) & Balm
 
 [Diagram.io](https://dbdiagram.io/home) was used to create the data schema for this project. Our schema had three collections:
 
-![Database structure](documentation/database-schema.png)  
+![Database structure](readme-files/read-me/db-schema.png)  
 
 ## **Features**
-
 ### **General Features On All Pages**
 
 The site has been designed to be fully responsive, across all devices and has been designed to be user-friendly and intuitive.
@@ -138,6 +137,7 @@ This contains US Together social media accounts, where users may discover more a
 The Favicon was created using [Favicon.io](https://favicon.io/).We chose the hero image as our favicon as it brings brand cohesion to the site.
 
 **Modal**
+
 On some sites, a modal appears to allow the user to conduct basic operations such as adding events, making donations and deleting events. 
 
 ### **FEATURES TO IMPLEMENT IN FUTURE**  
@@ -199,7 +199,7 @@ On some sites, a modal appears to allow the user to conduct basic operations suc
 
    * [GIT](https://git-scm.com/) : This was the preferred method of version control. To commit and publish our project to GitHub, we used the gitpod.
 
-   * [Favicon.io](https://favicon.io/favicon-converter/) : This is a Favicon maker that was used to create the MMÀ-HAIRCARE favicon. 
+   * [Favicon.io](https://favicon.io/favicon-converter/) : This is a Favicon maker that was used to create the our favicon. 
 
    * [JSHint](https://jshint.com/) : This was used to analyse the JavaScript code and ensure that all errors were minimised. 
 
@@ -211,120 +211,286 @@ On some sites, a modal appears to allow the user to conduct basic operations suc
 
    * [Adobe Color](https://color.adobe.com/): This was used to select the site's colour scheme.
 
-   * [TinyPNG](https://tinyjpg.com/): This is an image compressor that is used to compress all images.
-
-
 ## Testing
 
 Please view our [TESTING.md](testing.md) file for more information on the testing undertaken.
 
+# **Deployment**
+This project was created with Gitpod as the IDE, committed to git as its local repository, and is hosted on Github. The project is deployed using a free hosting service (Heroku).
 
-### Further Testing
-
--   The Website was tested on Google Chrome, Internet Explorer, Microsoft Edge and Safari browsers.
--   The website was viewed on a variety of devices such as Desktop, Laptop, iPhone7, iPhone 8 & iPhoneX.
--   A large amount of testing was done to ensure that all pages were linking correctly.
--   Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
-
-### Known Bugs
-
--   On some mobile devices the Hero Image pushes the size of screen out more than any of the other content on the page.
-    -   A white gap can be seen to the right of the footer and navigation bar as a result.
--   On Microsoft Edge and Internet Explorer Browsers, all links in Navbar are pushed upwards when hovering over them.
+To Deploy US Together the following are needed 
+   -	A Heroku account  
+   -	A github account 
 
 
-### Testing User Stories from User Experience (UX) Section
+### **How To Use Project**   
+In the event that a user wishes to fork the project or clone the project, the necessary steps are also provided below.
 
+#### **Forking the repository**  
+1. Sign in to your GitHub account.  
+2. Locate the repository to be duplicated, in this case US together.  
+3. Locate and click the “Fork” button at the top of the  US together. 
+4. This creates a copy of the repository in our account and allows us to make changes.
 
-## **Deployment**
+#### **Making A Local Clone of Github Repository**   
 
-### **Deployment Heroku**
+1. Locate the desired repository in this case US together, under the repository name click Clone or download.
 
-This project was deployed using Heroku:
+2. Click it and copy the HTTPS link that appears.
 
-1. Create a new app with the name found-in-translation.
-2. Linked the found-in-translation app to its Github repository.
-3. Verify that the project has an up to date Procfile and requirements.txt
-4. Push the project to the Heroku remote.
-5. Set the SECRET_KEY environmental variable in the Heroku config vars.
-6. Set the IP to 0.0.0.0 and the PORT to 5000 in the Heroku config vars.
-7. Set the MONGO_URI environmental variable in the Heroku config vars.
-8. Restart all dynos.
-9. Open the app on Heroku and check to ensure that it's working correctly.
+3.	Activate your local IDE terminal.
 
-### **How to clone**
+4.	Change the current working directory to the location where you wish the cloned file to be saved.
 
-1. Log in to GitHub and locate the [GitHub Repository](https://github.com/)
-2. Under the repository name, click "Clone or download".
-3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
-4. Open Git Bash
-5. Change the current working directory to the location where you want the cloned directory to be made.
-6. Type `git clone`, and then paste the URL you copied in Step 3.
+5.	In the terminal, type “git clone” and then paste the link copied from HTTPS.  
+```$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY```
+
+6. Press Enter and  your local clone is created.
+
+7. Create a new env.py file in the base directory and include the following code.
+```
+import os
+#Django
+os.environ.setdefault( 'DEVELOPMENT', 'True')
+os.environ.setdefault('SECRET_KEY', '<YOUR_KEY>')
 
 ```
-$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+8. Ensure that the env.py file is located in the .gitignore file.
+
+9. Type the following into the terminal to install our required dependencies and modules.
+      ```pip3 install -r requirements.txt```
+
+
+#### **Project Set Up** 
+After forking or cloning the US together repository, the following steps must be completed in order for our github repository to be deployed to Heroku.
+1.  Ensure that all US together dependencies are installed and operational. The gitignore file contains all of the necessary hidden files.
+
+2. Go to your gitpod workspace after installing the necessary dependencies. Variables can be found under Settings - --> Variables. Enter the following project environment variables:
+   Varables | Key   
+   ---| ---   
+   DEVELOPMENT | TRUE   
+   SECRET_KEY | <your_secret_key>  
+   STRIPE_PUBLIC_KEY | <your_secret_key>  
+   STRIPE_SECRET_KEY | <your_secret_key>   
+   STRIPE_WH_KEY | <your_secret_key>
+
+   These keys can be obtained from  
+      -	The SECRET_KEY from [Django Secret Key Generator](https://miniwebtool.com/django-secret-key-generator/) 
+      -	By creating an account, you can obtain the STRIPE PUBLIC KEY and STRIPE SECRET KEY. This is located in the 'Developers' section (API KEY). 
+      - The STRIPE WH KEY can be obtained from the 'Webhooks' section of the 'Developers' section. After you've navigated to 'Webhooks,' click "Add new endpoint." Insert your endpoint URL here ``` https://<your_host_url>/checkout/wh/. ``` 
+      To listen to events, select payment.intent.success and payment.intent.failed, and then create an endpoint. STRIPE WH KEY can be revealed once it has been created.
+
+3. Make migrations to keep our database up to date.
+
+4. We can now run the server and deploy after it has been updated.
+
+
+### **Deployment To Heroku**
+
+1. Create a new Heroku App
+   - Sign in or create a Heroku account. After logging in, click "Create new app" in the top right corner of your dashboard.
+
+   - Give your app a unique name and use a hyphen between words.
+
+   - Select a region near you and then click Create App.
+
+2. Navigate to the resources tab on the app dashboard, search for "Heroku Postgres" under Add-ons, select it, and then select the free plan.
+
+3. On Heroku's Dashboard, Under settings, click the "Reveal Configure vars" button and enter the required configuration variables, including those whose values may not yet be present. The unavailable values would be updated as you progress through the steps.
+      Varables | Key   
+      ---| ---   
+      AWS_ACCESS_KEY_ID | your access aws key 
+      AWS_SECRET_ACCESS_KEY| Your secret access aws key  
+      DATABASE_URL| Your database url   
+      EMAIL_HOST_PASS | Your app password
+      EMAIL_HOST_USER | Your email address  
+      SECRET_KEY | Your secret key
+      STRIPE_PUBLIC_KEY | Your stripe public key 
+      STRIPE_SECRET_KEY | Your stripe secret key
+      USE_AWS | True
+
+4. Return to your project's Gitpod IDE and use the CLI to install the following important files: 
+   ```
+   pip3 install dj_database_url
+   pip3 install psycopg2-binary
+   ```
+   - Once the requirements have been created, we must freeze them in our CLI pip3 freeze > requirements.txt to ensure that Heroku instals our app when it is deployed.
+
+   - Create a new database for US together by importing dj database url into our settings.py file and commenting out our default configuration. We would need to replace the default database with a call to dj database url.parse and pass it the database URL from Heroku (which can be found in our app settings tab's config variables).
+      ```
+      DATABASES = {
+      'default': dj_database_url.parse('YOUR_DATABASE_URL_FROM_HEROKU')
+      }
+      ```
+   - Run migrations
+      ```
+      python3 manage.py migrate
+      ```
+5. To load our product data from the fixtures folder to our deployed US together site, we must first load the category data before the product data because the products rely on the existing category.
+   ```
+   python3 manage.py loaddata categories
+   python3 manage.py loaddata products
+   ```
+
+6. Create a new super user to log in with and provide details for the username and password.
+   ```
+   python3 manage.py create superuser
+   ```
+
+7. Remove the Heroku database URL from our settings.py file and uncomment the default database configuration. Add an if statement to specify that if the app is running on Heroku, it should connect to Postgres; otherwise, it should connect to Sqlite.
+
 ```
+   if 'DATABASE_URL' in os.environ:
+      DATABASES = {
+         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+      }
+   else:
+      DATABASES = {
+         'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+         }
+      }
+   ```  
 
-7. Press Enter. Your local clone will be created.
+8. Once we've created our conditional statement, we'll need to install Gunicorn, which will serve as our webserver.  
+   ```
+   pip3 install gunicorn 
+   ```
 
-```
-$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
-> Cloning into `CI-Clone`...
-> remote: Counting objects: 10, done.
-> remote: Compressing objects: 100% (8/8), done.
-> remove: Total 10 (delta 1), reused 10 (delta 1)
-> Unpacking objects: 100% (10/10), done.
-```
+9. Freeze our requirements after installation to ensure that all of our app's required packages are installed.
+   ```
+   pip3 freeze > requirements.txt 
+   ```
 
-Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop) to retrieve pictures for some of the buttons and more detailed explanations of the above process.
+10. Create a Procfile that instructs Heroku to create a web dyno that will run gunicorn and our app.
+   ```
+   web: gunicorn mma.wsgi:application 
+   ```
+11. Log in to Heroku via the CLI and temporarily disable collectstatic so that Heroku does not attempt to collectstatic files when it deploys.
+   ```
+   heroku config:set DISABLE_COLLECTSTATIC=1 --app pride-hackathon-team3
+   ```
 
-### **How to Fork**
+12. After we have completed the preceding steps, we must add the hostname of our Heroku app (US together) to the list of allowed hosts in our settings. py and also include localhost so that Gitpod can continue to function:
+   ```
+   ALLOWED_HOSTS = [‘pride-hackathon-team3.herokuapp.com’, 'localhost']
+   ```
 
-By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
+13. Save all files, commit, and push to github, then Heroku. We would need to initialise git remote because we created our app via the heroku  website rather than the terminal.
+   ```
+   heroku git:remote -a mma-beauty 
+   ```
+   and then push to Heroku using 
+   ```
+   git push heroku main 
+   ```
 
-1. Log in to GitHub and locate the [GitHub Repository](https://github.com/)
-2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
-3. You should now have a copy of the original repository in your GitHub account.
+14. Link our Git repository to Heroku
+   - Return to the Heroku Dashboard and select "deploy" at the top.
+
+   - Choose "GitHub" as the deployment method from the section.
+
+   - This provides you with an input field in which you can search for your GitHub repository by name. When you find the correct repository, in our case " US Together" click "Connect."
+
+   - To ensure that all configuration variables on Heroku are updated with the required values, click the "Reveal Config Vars" button.
 
 
-## **Credits**
+15. Enable Automatic Deployment
+
+   - Once we've configured all of our environment variables, return to the dashboard and click "Deploy." Scroll down to "Automatic Deployments" and press the "Enable Automatic Deployment" button.
+
+   - When we push to github, Heroku will automatically build our app with all of the required packages. Go to the top right corner and select "Open App" to view the website.
+
+16. Return to our US Together-settings.py file and replace the secret key setting with the call to get it from the environment, with an empty string as the default.
+``` SECRET_KEY = os.environ.get('SECRET_KEY', '') ```
+
+   Then, set debug to true only if the environment contains a variable called development.
+
+   ``` DEBUG = 'DEVELOPMENT' in os.environ ```
+
+
+### **AWS AND S3 BUCKET SETUP**
+
+Amazon web services s3 is a cloud-based storage service where we would store our static files and images.
+
+1. Go to aws.amazon.com and sign up for an AWS account.
+
+2. Log in to your account, go to the AWS management console, and then search for s3 to access its dashboard.
+   - Click the "Create new bucket" button. It is preferable if you provide a bucket name that is the same as your app name. Then choose a region near you.
+
+   - Select ACLS enabled and Bucket Owner Preferenced in the 'Object Ownership' section.
+
+   - Uncheck the "block all public access" box and check the "I acknowledge that the current settings may result in this bucket and its contents becoming public" box.
+
+   - Uncheck the "block all public access" box and check the "I acknowledge that the current settings may result in this bucket and its contents becoming public" box.
+
+3. To configure our bucket, click on the newly created bucket. Select the "properties tab." Scroll down to the "Static Website Hosting" section at the bottom of the page. When you've found it, click edit and then enable.Set the 
+   -	Hosting type: choose Host a Static Website
+   -	Index document: index.html
+   -	Error document: error.html and then Save Changes
+
+4.  Scroll down to find Cross-origin resource sharing (CORS) on the permissions tab. Click edit and paste our CORS configuration to establish the necessary access between our Heroku app and this S3 bucket. Once copied, save the changes.
+   ```
+      [
+         {
+            "AllowedHeaders": [
+               "Authorization"
+            ],
+            "AllowedMethods": [
+               "GET"
+            ],
+            "AllowedOrigins": [
+               "*"
+            ],
+            "ExposeHeaders": []
+         }
+      ]
+   ``` 
+   To create a security policy for this bucket, go to "bucket policy" and select "policy generator" while still on the permissions tab.
+      - Select Type of Policy: choose S3 Bucket Policy
+      - Effect: choose Allow
+      - Principal: *
+      - Actions: select GetObject
+      - Retrieve the Amazon Resource Name (ARN) from the Bucket ARN, which can be found in the "Bucket Policy" section.
+      - Select "Add Statement," then "Generate Policy." Copy and paste the policy into the bucket policy editor.
+      - To allow access to all resources in the new bucket, however, we must add a slash star at the end of the resource key. Then click the Save button. This is how the resource key should look.
+      ``` "Resource": "arn:aws:s3:::YOUR_BUCKET_NAME/*" ```
+      - Still on the permissions tab, navigate to the "Access Control List (ACL)" section, click Edit, and then enable List for Everyone (public access), and accept the warning box.
+
+
+# **Credits**
 ### **Content**
 
--   All content was written by the developers.
+-   The design of the site was inspired by research on other LGBTQ sites such as [LGBT ireland](https://lgbt.ie/), [lgbt ](https://lgbt.foundation/donate) and [Consent Workshop](https://theconsentworkshop.com/consent-in-queer-relationships)
 
--   Psychological properties of colours text in the README.md was found [here](http://www.colour-affects.co.uk/psychological-properties-of-colours)
+- Photoshop was used to resize and edit the images that appear throughout the site.
+      
+-  The animation effect used on the about page text header was obtained from the [CSS tricks](https://css-tricks.com/almanac/properties/a/animation/)  website. 
 
--   The full-screen hero image code came from this [StackOverflow post](https://stackoverflow.com)
+### **Media**
+- Photoshop was used to resize and edit the images that appear throughout the site.
 
 - The carousel images were sourced from [pexels](https://www.pexels.com/)
 
--   [Bootstrap4](https://getbootstrap.com/docs/4.4/getting-started/introduction/): Bootstrap Library used throughout the project mainly to make site responsive using the Bootstrap Grid System.
+- The images used on the donation page, error pages were from [Humanium](www.humanium.org/)
 
--   [MDN Web Docs](https://developer.mozilla.org/) : For Pattern Validation code. Code was modified to better fit my needs and to match an Irish phone number layout to ensure correct validation. Tutorial Found [Here](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/tel#Pattern_validation)
-
-### **Media**
-All images were obtained from 
 ## **Acknowledgements**
 
 * Thank you to Code Institute for putting together this hackathon - we have had an amazing time taking part.
 ## **Team Members**
 
-* Name  [LinkedIn]() | [Github]()
-
-""
-
-* . []() | [Github](\)
-
-"_"
-
 * Didi [LinkedIn](https://www.linkedin.com/in/onyema-onyejekwe-492128102/) | [Github](https://github.com/Didisimmons)
 
-"_Participating in the June 2022 Hackathon organized by Code Institute was an incredible experience. Thank you for this wonderful opportunity; the last few days have been simply incredible; I got to work with and learn from talented individuals, build my network skills, improve my collaborative skills, and have fun with my new friends while working on our exciting project. I'm looking forward to participating in many more hackathons in the future._"
+"_Participating in the June 2022 Hackathon organized by Code Institute was an incredible experience. Thank you for this wonderful opportunity; the last few days have been amazing; I got to work with and learn from talented individuals, build my network skills, improve my collaborative skills, and have fun with my new friends while working on our exciting project. I'm looking forward to participating in many more hackathons in the future._"
 
-* [LinkedIn]() | [Github]()
+* Daniel  [LinkedIn]() | [Github](https://github.com/xiaoniuniu89)
 
-""
 
-*  [LinkedIn]() | [Github]()
+* Felix [LinkedIn]() | [Github](https://github.com/Felix-Voyle)
 
-"". 
+
+* Liam [LinkedIn]() | [Github](https://github.com/AwrelH)
+
+
+* Hiwa [LinkedIn](https://www.linkedin.com/in/hiwa-awrel-180162119/) | [Github](https://github.com/liamfelix92)
