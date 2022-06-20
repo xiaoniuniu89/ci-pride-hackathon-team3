@@ -33,38 +33,8 @@
 
             <div class="col-sm-8 offset-sm-2">
                 <ol class="list-ways text-center">
-                    <li>Online : You can easily make a donation by using our stripe payment provider to help change people’s lives. </li>
-                    <li class="ways-list">Transfer : We also take bank transfers from corporate and private individuals. Kindly Click <a href="{% url 'home' %}">Here</a> to make a transfer. </li>
-
-                    <h4 class="donate-button">
-                        <a href="" class="donate-btn btn text-uppercase py-3">
-                            DONATE
-                        </a>
-                        <button data-bs-toggle="modal" data-bs-target="#donate-modal" type="button" id='donate-btn' value={{event.id}} class="btn btn-info btn-sm">Donate</button>
-                    </h4>
-                    <!-- Modal -->
-                    <div class="modal fade" id="donate-modal" tabindex="-1" aria-labelledby="donate-modalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                            <h5 class="modal-title" id="donate-modalLabel">How much would you like to donate?</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <form action="{% url 'make_donation' event.pk %}" method='POST'>{% csrf_token %}
-                                <div class="modal-body">
-                                <div class="mb-3">
-                                <label for="eamount" class="form-label">Amount</label>
-                                <input name='amount' type="number" class="form-control" id="exampleFormControlInput1" placeholder="5">
-                                </div>
-                                </div>
-                                <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary">Donate</button>
-                                </div>
-                            </form>
-                        </div>
-                        </div>
-                    </div>
+                    <li>Direct to Charity : You can easily make a donation to a charity by clicking your charity of choice down below.</li>
+                    <li class="ways-list">Find an event : make a donation to an <a href={% url 'event_list' %}>event</a> of your choice. </li>
                 </ol>
             </div>
         </div>
@@ -84,6 +54,8 @@
                         <img src="{{ MEDIA_URL }}consent.png" alt="consent workshop logo"/>
                     </div>
                     <h6 class="list-of-charities"><a href="https://theconsentworkshop.com/consent-in-queer-relationships" target="_blank">Consent Workshop</a></h6>
+                <button data-bs-toggle="modal" data-bs-target="#donate-modal" data-p='{{cw.pk}}' class='charity-donate-btn btn btn-primary'>Donate</button>
+
                 </div>
             </div>
             <div class="col-md-3">
@@ -92,6 +64,7 @@
                         <img src="{{ MEDIA_URL }}globalgiving.png"  class="img-fluid about-image"  alt="global living logo"/>
                     </div>
                     <h6 class="list-of-charities"><a href="https://www.globalgiving.org/" target="_blank">Global Living</a></h6>
+                    <button data-bs-toggle="modal" data-bs-target="#donate-modal" data-p='{{gl.pk}}' class='charity-donate-btn btn btn-info'>Donate</button>
                 </div>
             </div>
             <div class="col-md-3">
@@ -100,6 +73,7 @@
                         <img src="{{ MEDIA_URL }}outrightaction.png" alt="outright international logo"/>
                     </div>
                     <h6 class="list-of-charities"><a href="https://outrightinternational.org/what-are-lgbt-rights" target="_blank">Outright International</a></h6>
+                    <button data-bs-toggle="modal" data-bs-target="#donate-modal" data-p='{{oi.pk}}' class='charity-donate-btn btn btn-danger'>Donate</button>
                 </div>
             </div>
             <div class="col-md-3">
@@ -108,10 +82,14 @@
                         <img src="{{ MEDIA_URL }}microrainbow.png" alt="Micro rainbow logo"/>
                     </div>
                     <h6 class="list-of-charities"><a href="https://microrainbow.org/" target="_blank">Micro Rainbow</a></h6>
+                    <button data-bs-toggle="modal" data-bs-target="#donate-modal" data-p='{{mr.pk}}' class='charity-donate-btn btn btn-success'>Donate</button>
                 </div>
             </div> 
         </div>
     </div>
 
 </section>
+{% include 'charity/snippets/donate_modal.html' %}
+
 {% endblock %}
+

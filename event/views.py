@@ -19,7 +19,7 @@ class EventListView(ListView):
     paginate_by = 8
     now = datetime.now()
     date_today = now.date()
-    queryset = Event.objects.filter(date__gte=date_today).order_by('-created')
+    queryset = Event.objects.filter(date__gte=date_today).exclude(pk=48).exclude(pk=45).exclude(pk=46).exclude(pk=47).order_by('-created').exclude()
     context_object_name = 'events'
 
 def eventDetail(request, slug):

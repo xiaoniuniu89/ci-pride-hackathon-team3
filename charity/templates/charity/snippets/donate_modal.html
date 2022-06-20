@@ -1,0 +1,61 @@
+<!-- Modal -->
+<div class="modal fade" id="donate-modal" data-pk='1' tabindex="-1" aria-labelledby="donate-modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="donate-modalLabel">Donate</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form action="{% url 'make_donation' pk=0 %}" id="form-donate" method='POST'>{% csrf_token %}
+          <div class="modal-body">
+            <div class="mb-3">
+            <label for="eamount" class="form-label">Amount</label>
+            <input name='amount' type="number" class="form-control" id="exampleFormControlInput1" placeholder="5">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Donate</button>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+
+        document.querySelectorAll('.charity-donate-btn').forEach(element => {
+    element.addEventListener('click', (e) => {
+    let newValue = e.target.getAttribute('data-p')
+    document.querySelector('#donate-modal').setAttribute('data-pk', newValue)
+    document.querySelector('#form-donate').setAttribute('action', `/donate/donation/${newValue}/`)
+})
+})
+</script>
+{% comment %} <script>
+
+    // ajax call to update comment
+    $(document).on('click', '#donate-btn', function(e){
+        
+        
+      document.querySelector('#donate-btn').setAttribute('disabled', true)
+        $.ajax({
+        type: 'POST',
+        url: '{% url "make_donation" pk=0 %}'.replace('0', $("#donate-modal").attr('data-pk') ),
+        data: {
+            amount: $("#update-comment").attr('data-pk'),
+            csrfmiddlewaretoken: "{{csrf_token}}",
+            
+        },
+        success: function(json){
+            alert(json.msg)
+          window.location.replace(window.location.href)
+           
+        },
+        error: function(xhr, errmsg, err){}
+    }); 
+        
+        
+  });
+    
+</script>  {% endcomment %}
